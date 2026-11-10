@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Production House | Premium Services</title>
+    <title>King Production House | Premium Audio Services & Gigs</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -17,434 +17,221 @@
         .tab-active { border-bottom-color: #1dbf73; color: #1dbf73; font-weight: 700; }
         .tab-inactive { color: #74767e; font-weight: 600; }
         .tab-inactive:hover { color: #1dbf73; }
-        .pricing-box { border: 1px solid #e4e5e7; background: white; }
-        .pkg-btn { transition: all 0.2s; }
-        .pkg-active { border-bottom: 3px solid #1dbf73; color: #1dbf73; font-weight: 700; background: white; }
-        .pkg-inactive { border-bottom: 1px solid #e4e5e7; color: #74767e; font-weight: 600; background: #fafafa; }
-        .pkg-inactive:hover { background: #f1f1f1; }
-        .check-active { color: #222325; font-weight: 700; }
-        .check-inactive { color: #b5b6ba; font-weight: 400; }
     </style>
 </head>
 <body class="antialiased font-sans">
 
-    <!-- Header -->
-    <header class="bg-white p-5 border-b border-gray-200 sticky top-0 z-50 shadow-sm cursor-pointer" onclick="showHomePage()">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-black tracking-tight text-gray-900 hover:text-green-600 transition">
-                King Production House<span class="fiverr-green">.</span>
-            </h1>
+    <!-- Header / Navbar -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-3xl font-black text-gray-900 tracking-tight">KING <span class="fiverr-green">PRODUCTION</span> HOUSE</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-gray-700">
+                <a href="#" class="hover:text-green-600">Pro Services</a>
+                <a href="#" class="hover:text-green-600">Mixing & Mastering</a>
+                <a href="#" class="hover:text-green-600">Beat Making</a>
+                <a href="#" class="hover:text-green-600">Voiceover & SFX</a>
+                <a href="https://whop.com" target="_blank" class="bg-fiverr-green text-white px-5 py-2.5 rounded-md hover-fiverr-green transition shadow-sm">Order Custom Gig</a>
+            </div>
         </div>
     </header>
 
-    <!-- ==================== HOME PAGE (GIGS LIST) ==================== -->
-    <div id="home-page">
-        <section class="bg-white py-16 px-4 border-b border-gray-200">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                    Professional <span class="fiverr-green">Creative Services</span> for Your Brand
-                </h2>
-                <p class="text-lg text-gray-600 mb-8">
-                    Elevate your content with industry-ready music production and Hollywood-style VFX editing. Your vision, our masterpiece.
-                </p>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-20 px-4 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6">Find the perfect <span class="fiverr-green">freelance audio services</span> for your music</h1>
+            <p class="text-lg text-gray-300 mb-8">Radio-ready mixing, custom beats, podcast cleanup, vocal tuning, and professional sound design by elite engineers.</p>
+            <div class="flex justify-center">
+                <a href="#gigs" class="bg-fiverr-green text-white font-bold px-8 py-3.5 rounded-md hover-fiverr-green transition text-lg shadow-lg">Explore All Gigs</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="max-w-7xl mx-auto px-4 mt-10">
-            <div class="flex flex-wrap border-b border-gray-300 gap-8 justify-center md:justify-start">
-                <button onclick="changeTab('audio', this)" class="tab-btn tab-active pb-3 text-lg" id="tab-audio">Audio Services (10)</button>
-                <button onclick="changeTab('video', this)" class="tab-btn tab-inactive pb-3 text-lg" id="tab-video">Video Services (10)</button>
-                <button onclick="changeTab('photo', this)" class="tab-btn tab-inactive pb-3 text-lg" id="tab-photo">Photo Editing (5)</button>
-            </div>
-        </section>
+    <!-- Main Gigs Gallery -->
+    <main id="gigs" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex items-center justify-between mb-8 border-b border-gray-200 pb-4">
+            <h2 class="text-2xl font-bold text-gray-900">Featured Professional Gigs</h2>
+            <span class="text-sm text-gray-500 font-medium">10 Active Services Available</span>
+        </div>
 
-        <section class="max-w-7xl mx-auto px-4 py-10">
-            <div id="gigs-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-6">
-                <!-- Gigs load dynamically -->
-            </div>
-        </section>
-    </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-    <!-- ==================== DETAILED GIG PAGE ==================== -->
-    <div id="gig-detail-page" class="hidden bg-white min-h-screen">
-        <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-10">
-            
-            <!-- Left Side: Gig Details -->
-            <div class="lg:w-2/3">
-                <button onclick="showHomePage()" class="text-gray-500 hover:text-gray-900 mb-4 font-semibold flex items-center gap-2">
-                    <span>&larr;</span> Back to Services
-                </button>
-                
-                <h1 id="detail-title" class="text-3xl font-bold text-gray-900 mb-6 leading-snug"></h1>
-                
-                <!-- SWIPEABLE IMAGE SLIDER -->
-                <div class="w-full h-80 md:h-[450px] bg-gray-900 mb-8 border border-gray-200 overflow-hidden relative group">
-                    <img id="detail-img" src="" alt="Gig Image" class="w-full h-full object-cover transition-opacity duration-300">
-                    
-                    <!-- Left Arrow -->
-                    <button onclick="prevImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2.5 rounded-full shadow-lg opacity-80 hover:opacity-100 transition">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path></svg>
-                    </button>
-                    <!-- Right Arrow -->
-                    <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2.5 rounded-full shadow-lg opacity-80 hover:opacity-100 transition">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    
-                    <!-- Image Counter Badge -->
-                    <div class="absolute bottom-4 right-4 bg-black/70 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-sm">
-                        <span id="img-counter">1 / 5</span>
-                    </div>
+            <!-- Gig 1: Mixing & Mastering -->
+            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
+                <div class="h-48 bg-gray-100 overflow-hidden relative">
+                    <img src="Audio_soundwaves_on_dual_monitors_890126cb_2K.jpg" alt="Mixing & Mastering" class="w-full h-full object-cover">
                 </div>
-                
-                <div class="mb-10">
-                    <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">Gig Summary</h2>
-                    <ul id="detail-summary" class="space-y-3 text-gray-700 list-disc pl-5"></ul>
-                </div>
-
-                <div class="mb-10 pt-8 border-t border-gray-200">
-                    <h2 class="text-xl font-bold text-gray-900 mb-6">Get to know Atiq</h2>
-                    
-                    <div class="flex items-start gap-4 mb-6">
-                        <div class="w-20 h-20 rounded-full bg-gray-900 text-white flex items-center justify-center text-3xl font-bold">A</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-900">Atiq</h3>
-                            <p class="text-gray-600 mb-1">Founder, King Production House</p>
-                            <div class="flex items-center text-yellow-400 font-bold">
-                                ★ <span id="profile-rating">4.9</span> <span class="text-gray-400 font-normal ml-1">(<span id="profile-reviews">212</span> reviews)</span>
-                            </div>
+                <div class="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
+                            <span class="text-xs font-bold text-gray-800">King Production</span>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 5.0</span>
                         </div>
+                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will radio ready mix and master your music as a sound engineer</h3>
                     </div>
-                    
-                    <div class="bg-gray-50 border border-gray-200 rounded p-6 grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-sm">
-                        <div><p class="text-gray-500">From</p><p class="font-semibold text-gray-900">Pakistan</p></div>
-                        <div><p class="text-gray-500">Member since</p><p class="font-semibold text-gray-900">2022</p></div>
-                        <div><p class="text-gray-500">Avg. response time</p><p class="font-semibold text-gray-900">1 hour</p></div>
-                        <div><p class="text-gray-500">Languages</p><p class="font-semibold text-gray-900">English, Urdu</p></div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
+                        <span class="text-lg font-bold text-gray-900">$30</span>
                     </div>
-                    
-                    <p id="profile-bio" class="text-gray-700 leading-relaxed"></p>
                 </div>
             </div>
 
-            <!-- Right Side: Pricing Box -->
-            <div class="lg:w-1/3 relative">
-                <div class="sticky top-28 pricing-box rounded shadow-lg overflow-hidden">
-                    
-                    <div class="flex text-center w-full">
-                        <button id="pkg-basic" onclick="selectPackage('basic')" class="w-1/3 py-4 pkg-btn pkg-active">Basic</button>
-                        <button id="pkg-standard" onclick="selectPackage('standard')" class="w-1/3 py-4 pkg-btn pkg-inactive">Standard</button>
-                        <button id="pkg-premium" onclick="selectPackage('premium')" class="w-1/3 py-4 pkg-btn pkg-inactive">Premium</button>
+            <!-- Gig 2: Hip Hop Beat Making -->
+            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
+                <div class="h-48 bg-gray-100 overflow-hidden relative">
+                    <img src="Audio_waveforms_on_studio_monitors_b43f0639_2K.jpg" alt="Hip Hop Beat" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
+                            <span class="text-xs font-bold text-gray-800">King Production</span>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 4.9</span>
+                        </div>
+                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will produce a custom Hip Hop Beat</h3>
                     </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
+                        <span class="text-lg font-bold text-gray-900">$40</span>
+                    </div>
+                </div>
+            </div>
 
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <span id="pkg-name-display" class="font-bold text-gray-900 text-lg flex items-center gap-2"></span>
-                            </div>
-                            <span id="detail-price" class="text-2xl font-bold text-gray-900"></span>
+            <!-- Gig 3: Podcast Audio Cleanup -->
+            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
+                <div class="h-48 bg-gray-100 overflow-hidden relative">
+                    <img src="Golden_crown_over_mixing_console_45c0c665_2K.jpg" alt="Podcast Cleanup" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
+                            <span class="text-xs font-bold text-gray-800">King Production</span>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 5.0</span>
                         </div>
-                        
-                        <p id="pkg-desc" class="text-gray-600 text-sm mb-6 min-h-[40px]"></p>
-                        
-                        <div class="flex items-center gap-4 text-sm font-bold text-gray-700 mb-6">
-                            <span class="flex items-center gap-1">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <span id="pkg-delivery"></span>
-                            </span>
-                            <span class="flex items-center gap-1">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-                                <span id="pkg-revisions">Unlimited Revisions</span>
-                            </span>
+                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will do podcast audio cleanup and noise reduction</h3>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
+                        <span class="text-lg font-bold text-gray-900">$20</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gig 4: Lo-Fi Chill Track -->
+            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
+                <div class="h-48 bg-gray-100 overflow-hidden relative">
+                    <img src="I will create a custom Lo-Fi chill track 1.jpg" alt="Lo-Fi Chill Track" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
+                            <span class="text-xs font-bold text-gray-800">King Production</span>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 4.9</span>
                         </div>
-                        
-                        <ul id="pkg-features" class="text-sm mb-8 space-y-3"></ul>
-                        
-                        <a id="detail-wa-link" href="#" target="_blank" class="block w-full bg-black text-white text-center py-3 rounded font-bold text-lg hover:bg-gray-800 transition mb-3">
-                            Continue
-                        </a>
-                        <p class="text-center text-xs text-gray-500 font-medium">You won't be charged yet</p>
+                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will create a custom Lo-Fi chill track</h3>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
+                        <span class="text-lg font-bold text-gray-900">$25</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gig 5: Audio Restoration -->
+            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
+                <div class="h-48 bg-gray-100 overflow-hidden relative">
+                    <img src="I will restore and enhance old poor audio recordings 1.jpg" alt="Audio Restoration" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
+                            <span class="text-xs font-bold text-gray-800">King Production</span>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 5.0</span>
+                        </div>
+                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will restore and enhance old poor audio recordings</h3>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
+                        <span class="text-lg font-bold text-gray-900">$25</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gig 6: Professional Voiceover -->
+            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
+                <div class="h-48 bg-gray-100 overflow-hidden relative">
+                    <img src="I will record a professional voiceover 1.jpg" alt="Professional Voiceover" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
+                            <span class="text-xs font-bold text-gray-800">King Production</span>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 4.9</span>
+                        </div>
+                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will record a professional voiceover</h3>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
+                        <span class="text-lg font-bold text-gray-900">$30</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gig 7: EDM Ghost Production -->
+            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
+                <div class="h-48 bg-gray-100 overflow-hidden relative">
+                    <img src="I will produce EDM ghost production for you 1.jpg" alt="EDM Ghost Production" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
+                            <span class="text-xs font-bold text-gray-800">King Production</span>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 5.0</span>
+                        </div>
+                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will produce EDM ghost production for you</h3>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
+                        <span class="text-lg font-bold text-gray-900">$50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gig 8: Vocal Tuning -->
+            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
+                <div class="h-48 bg-gray-100 overflow-hidden relative">
+                    <img src="I will tune your vocals to sound perfect 1.jpg" alt="Vocal Tuning" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
+                            <span class="text-xs font-bold text-gray-800">King Production</span>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 4.9</span>
+                        </div>
+                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will tune your vocals to sound perfect</h3>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
+                        <span class="text-lg font-bold text-gray-900">$25</span>
                     </div>
                 </div>
             </div>
 
         </div>
-    </div>
+    </main>
 
-    <!-- Floating Live Chat Button -->
-    <a href="https://wa.me/92XXXXXXXXXX?text=Hi Atiq, I have a general inquiry." target="_blank" class="fixed bottom-6 right-6 bg-fiverr-green hover-fiverr-green text-white p-4 rounded-full shadow-xl transition-transform transform hover:scale-110 flex items-center justify-center z-50">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-        </svg>
-    </a>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-20 py-8 text-center text-sm text-gray-500">
+        <p>© 2026 King Production House. All rights reserved.</p>
+    </footer>
 
-    <!-- JavaScript -->
-    <script>
-        const myWhatsAppNumber = "92XXXXXXXXXX"; // Apna Asil Number lagayein
-
-        const bios = {
-            audio: "Hi, I’m Atiq, a professional Sound Engineer with years of experience in the music industry. I specialize in radio-ready mixing, mastering, and custom beat production. My goal is to make your tracks hit industry loudness standards while maintaining punch, clarity, and emotion.",
-            video: "Hi, I’m Atiq, a professional Video Editor and VFX artist. With a strong background in cinematic storytelling, I specialize in transforming raw footage into high-retention YouTube content, gaming highlights, and cinematic masterpieces using advanced color grading and motion graphics.",
-            photo: "Hi, I’m Atiq, an expert Graphic Designer and Retoucher. I specialize in high-end photo manipulation, background removal, and commercial product editing. I focus on pixel-perfect details to ensure your images look premium, professional, and ready for any campaign."
-        };
-
-        const summaries = {
-            audio: [
-                "This service offers industry-standard mixing and mastering for your tracks.",
-                "Freelancer delivers fast communication and on-time delivery with hundreds of satisfied clients.",
-                "Extras include vocal tuning, stem mastering, and analog gear warmth."
-            ],
-            video: [
-                "This service offers high-retention editing for YouTube, gaming, and cinematic content.",
-                "Freelancer delivers fast communication and on-time delivery with hundreds of satisfied clients.",
-                "Extras include motion graphics, subtitles, sound effects, and polished pacing."
-            ],
-            photo: [
-                "This service offers 100% professional and quality Photoshop editing.",
-                "Freelancer delivers fast communication and on-time delivery with hundreds of satisfied clients.",
-                "Extras include super fast delivery, VIP support, and high-resolution source files."
-            ]
-        };
-
-        const packageData = {
-            video: {
-                basic: {
-                    name: "✦ Starter Edit", desc: "Clean cuts, smooth pacing. Best for simple gameplay edits.", delivery: "2-day delivery",
-                    features: [{ text: "Up to 30 minutes of footage", active: true }, { text: "Up to 5 minutes running time", active: true }, { text: "Sound design & mixing", active: true }, { text: "Color grading", active: false }, { text: "Motion graphics", active: false }, { text: "Subtitles", active: false }]
-                },
-                standard: {
-                    name: "★ Content Creator Edit", desc: "Perfect balance of quality and value for regular YouTube content.", delivery: "5-day delivery",
-                    features: [{ text: "Up to 60 minutes of footage", active: true }, { text: "Up to 15 minutes running time", active: true }, { text: "Sound design & mixing", active: true }, { text: "Color grading", active: true }, { text: "Motion graphics", active: false }, { text: "Subtitles", active: false }]
-                },
-                premium: {
-                    name: "✦ High Retention Pro Edit", desc: "Top tier, high-retention cinematic edits for professional creators.", delivery: "5-day delivery",
-                    features: [{ text: "Up to 105 minutes of footage", active: true }, { text: "Up to 25 minutes running time", active: true }, { text: "Sound design & mixing", active: true }, { text: "Color grading", active: true }, { text: "Motion graphics", active: true }, { text: "Subtitles", active: true }]
-                }
-            },
-            audio: {
-                basic: {
-                    name: "✦ Basic Mix", desc: "Perfect for rough demos. Standard leveling, EQ, and basic noise reduction.", delivery: "3-day delivery",
-                    features: [{ text: "High-Quality WAV format", active: true }, { text: "EQ & Leveling", active: true }, { text: "Up to 5 stems", active: true }, { text: "Advanced Vocal Tuning", active: false }, { text: "Analog Gear Processing", active: false }, { text: "Full Track Mastering", active: false }]
-                },
-                standard: {
-                    name: "★ Standard Mix & Master", desc: "Industry-standard mix ready for streaming platforms like Spotify and Apple Music.", delivery: "4-day delivery",
-                    features: [{ text: "High-Quality WAV format", active: true }, { text: "EQ & Leveling", active: true }, { text: "Up to 15 stems", active: true }, { text: "Advanced Vocal Tuning", active: true }, { text: "Analog Gear Processing", active: false }, { text: "Full Track Mastering", active: false }]
-                },
-                premium: {
-                    name: "✦ Pro Mix & Master", desc: "High-end analog processing, precise vocal tuning, and commercial mastering.", delivery: "5-day delivery",
-                    features: [{ text: "High-Quality WAV format", active: true }, { text: "EQ & Leveling", active: true }, { text: "Unlimited stems", active: true }, { text: "Advanced Vocal Tuning", active: true }, { text: "Analog Gear Processing", active: true }, { text: "Full Track Mastering", active: true }]
-                }
-            },
-            photo: {
-                basic: {
-                    name: "✦ Basic Retouch", desc: "Simple background removal and basic touch-ups for personal use.", delivery: "1-day delivery",
-                    features: [{ text: "High Resolution Output", active: true }, { text: "Background removal", active: true }, { text: "1 Image Edited", active: true }, { text: "Advanced Color Correction", active: false }, { text: "Complex Skin Retouching", active: false }, { text: "Source File (PSD)", active: false }]
-                },
-                standard: {
-                    name: "★ Pro Retouch", desc: "Professional editing with color grading, perfect for social media or eCommerce.", delivery: "2-day delivery",
-                    features: [{ text: "High Resolution Output", active: true }, { text: "Background removal", active: true }, { text: "5 Images Edited", active: true }, { text: "Advanced Color Correction", active: true }, { text: "Complex Skin Retouching", active: false }, { text: "Source File (PSD)", active: false }]
-                },
-                premium: {
-                    name: "✦ Premium Manipulation", desc: "Flawless magazine-quality manipulation, complex retouching, and source files.", delivery: "3-day delivery",
-                    features: [{ text: "High Resolution Output", active: true }, { text: "Background removal", active: true }, { text: "10 Images Edited", active: true }, { text: "Advanced Color Correction", active: true }, { text: "Complex Skin Retouching", active: true }, { text: "Source File (PSD)", active: true }]
-                }
-            }
-        };
-
-        // 25 UNIQUE COVER IDs (Tasweerein repeat nahi hongi aur image size chota rakha hai taake block na ho)
-        const audioCovers = ["1516280440502-86938dc402a4", "1598488035139-bdbb2231ce04", "1470225620780-dba8ba36b745", "1520523839897-bd0b52f945a0", "1590602847861-f357a9332bbc", "1621510461877-f27eb6f2c253", "1514525253161-7a46d19cd819", "1590602848243-7f212260ff02", "1507838153414-b4b713384a76", "1516224498413-84ecf3a1e7fc"];
-        const videoCovers = ["1574717024653-61fd2cf4d44d", "1536240478700-b869070f9279", "1590130985289-5f212260ff02", "1611162617474-5b21e879e113", "1587304505187-2195f32ebbc5", "1616423640778-28d1b53229bd", "1626815364136-1db98a00263c", "1512917774080-9991f1c4c750", "1550745165-9bc0b252726f", "1519225421980-715cb0215aed"];
-        const photoCovers = ["1550684848-fac1c5b4e853", "1534528741775-53994a69daeb", "1601004890684-d8cbf643f5f2", "1523275335684-37898b6baf30", "1550684848-76ce926ce38d"];
-
-        const gigsData = {
-            audio: [
-                { id: 'a1', title: "I will radio ready mix and master your music as a sound engineer", prices: { basic: 30, standard: 60, premium: 100 } },
-                { id: 'a2', title: "I will produce a custom Hip Hop Beat", prices: { basic: 40, standard: 80, premium: 120 } },
-                { id: 'a3', title: "I will do podcast audio cleanup and noise reduction", prices: { basic: 15, standard: 30, premium: 50 } },
-                { id: 'a4', title: "I will create a custom Lo-Fi chill track", prices: { basic: 35, standard: 70, premium: 110 } },
-                { id: 'a5', title: "I will tune your vocals to sound perfect", prices: { basic: 20, standard: 45, premium: 70 } },
-                { id: 'a6', title: "I will create sound design and SFX for your video", prices: { basic: 25, standard: 55, premium: 90 } },
-                { id: 'a7', title: "I will produce EDM ghost production for you", prices: { basic: 100, standard: 200, premium: 350 } },
-                { id: 'a8', title: "I will record a professional voiceover", prices: { basic: 20, standard: 40, premium: 80 } },
-                { id: 'a9', title: "I will compose background score for short films", prices: { basic: 80, standard: 150, premium: 250 } },
-                { id: 'a10', title: "I will restore and enhance old poor audio recordings", prices: { basic: 25, standard: 50, premium: 85 } }
-            ],
-            video: [
-                { id: 'v1', title: "I will edit funny roblox, minecraft and gaming videos", prices: { basic: 50, standard: 120, premium: 200 } },
-                { id: 'v2', title: "I will do cinematic VFX and motion graphics", prices: { basic: 50, standard: 120, premium: 200 } },
-                { id: 'v3', title: "I will edit high-converting TikToks and Reels", prices: { basic: 15, standard: 40, premium: 80 } },
-                { id: 'v4', title: "I will color grade your footage to look Hollywood", prices: { basic: 40, standard: 90, premium: 150 } },
-                { id: 'v5', title: "I will edit your music video with cool transitions", prices: { basic: 80, standard: 160, premium: 280 } },
-                { id: 'v6', title: "I will create a 3D product promo video", prices: { basic: 100, standard: 220, premium: 350 } },
-                { id: 'v7', title: "I will do green screen removal and keying", prices: { basic: 15, standard: 35, premium: 60 } },
-                { id: 'v8', title: "I will edit cinematic real estate videos", prices: { basic: 50, standard: 100, premium: 180 } },
-                { id: 'v9', title: "I will animate your custom logo in 2D/3D", prices: { basic: 45, standard: 95, premium: 160 } },
-                { id: 'v10', title: "I will create cinematic wedding video highlights", prices: { basic: 120, standard: 250, premium: 400 } }
-            ],
-            photo: [
-                { id: 'p1', title: "I will do photoshop edit, graphic design, manipulation, retouch", prices: { basic: 10, standard: 25, premium: 50 } },
-                { id: 'p2', title: "I will do high-end beauty and portrait retouching", prices: { basic: 10, standard: 25, premium: 50 } },
-                { id: 'p3', title: "I will professionally remove background from images", prices: { basic: 5, standard: 15, premium: 30 } },
-                { id: 'p4', title: "I will edit product photos for Amazon/eCommerce", prices: { basic: 15, standard: 35, premium: 65 } },
-                { id: 'p5', title: "I will fix and restore old damaged photographs", prices: { basic: 20, standard: 45, premium: 80 } }
-            ]
-        };
-
-        function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
-        function getRandomRating() { return (Math.random() * (5.0 - 4.7) + 4.7).toFixed(1); }
-
-        // GENERATE UNIQUE IMAGES DYNAMICALLY FOR ALL GIGS
-        Object.keys(gigsData).forEach(cat => {
-            gigsData[cat].forEach((gig, index) => {
-                gig.rating = getRandomRating();
-                gig.reviews = getRandomInt(500, 1000);
-
-                // Assign 1 Unique Relevant Cover Image
-                let coverId = "";
-                if(cat === 'audio') coverId = audioCovers[index];
-                if(cat === 'video') coverId = videoCovers[index];
-                if(cat === 'photo') coverId = photoCovers[index];
-                
-                // ?w=600&q=60 lazmi hai taake size chota ho aur loading block na ho
-                gig.images = [`https://images.unsplash.com/photo-${coverId}?w=600&q=60`];
-
-                // Add 4 more unique swipeable images so total = 5
-                // Seed based URL means it will never repeat across any other gig
-                for(let i = 1; i <= 4; i++) {
-                    gig.images.push(`https://picsum.photos/seed/${gig.id}_slide_${i}/800/500`);
-                }
-            });
-        });
-
-        // SLIDER VARIABLES
-        let currentActiveGig = null;
-        let currentActiveCategory = null;
-        let currentImageIndex = 0;
-        let currentGigImages = [];
-
-        function renderGigs(category) {
-            const container = document.getElementById('gigs-container');
-            container.innerHTML = ''; 
-            
-            gigsData[category].forEach(gig => {
-                let coverImg = gig.images[0]; 
-                let cardHTML = `
-                    <div class="gig-card rounded flex flex-col overflow-hidden" onclick="showGigDetail('${category}', '${gig.id}')">
-                        <div class="h-40 bg-gray-200 overflow-hidden relative">
-                            <!-- lazy loading added to prevent blank/broken images -->
-                            <img src="${coverImg}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="p-4 flex flex-col flex-grow">
-                            <div class="flex items-center gap-2 mb-2">
-                                <div class="w-6 h-6 rounded-full bg-gray-900 text-white flex items-center justify-center text-xs font-bold">A</div>
-                                <span class="text-sm font-semibold text-gray-900">Atiq</span>
-                            </div>
-                            <h3 class="text-sm text-gray-700 font-medium hover:text-green-600 leading-snug flex-grow">
-                                ${gig.title}
-                            </h3>
-                            <div class="flex items-center text-yellow-400 text-sm mt-3 font-bold">
-                                ★ ${gig.rating} <span class="text-gray-400 font-normal ml-1">(${gig.reviews})</span>
-                            </div>
-                        </div>
-                        <div class="border-t border-gray-200 p-4 flex justify-between items-center bg-gray-50">
-                            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
-                            <div class="text-xs font-semibold text-gray-600 tracking-wide uppercase">Starting at <span class="text-lg text-gray-900 font-bold ml-1">$${gig.prices.basic}</span></div>
-                        </div>
-                    </div>
-                `;
-                container.innerHTML += cardHTML;
-            });
-        }
-
-        // SLIDER LOGIC
-        function updateSliderView() {
-            document.getElementById('detail-img').src = currentGigImages[currentImageIndex];
-            document.getElementById('img-counter').innerText = `${currentImageIndex + 1} / ${currentGigImages.length}`;
-        }
-        function nextImage() {
-            if (currentImageIndex < currentGigImages.length - 1) { currentImageIndex++; } 
-            else { currentImageIndex = 0; }
-            updateSliderView();
-        }
-        function prevImage() {
-            if (currentImageIndex > 0) { currentImageIndex--; } 
-            else { currentImageIndex = currentGigImages.length - 1; }
-            updateSliderView();
-        }
-
-        function showGigDetail(category, gigId) {
-            currentActiveCategory = category;
-            currentActiveGig = gigsData[category].find(g => g.id === gigId);
-            
-            // Slider setup
-            currentGigImages = currentActiveGig.images;
-            currentImageIndex = 0;
-            updateSliderView(); 
-            
-            document.getElementById('detail-title').innerText = currentActiveGig.title;
-            document.getElementById('profile-rating').innerText = currentActiveGig.rating;
-            document.getElementById('profile-reviews').innerText = currentActiveGig.reviews;
-            document.getElementById('profile-bio').innerText = bios[category];
-
-            const summaryContainer = document.getElementById('detail-summary');
-            summaryContainer.innerHTML = '';
-            summaries[category].forEach(point => { summaryContainer.innerHTML += `<li>${point}</li>`; });
-            summaryContainer.innerHTML += `<li>This service proves credibility with a ${currentActiveGig.rating} rating and over ${currentActiveGig.reviews} reviews.</li>`;
-
-            document.getElementById('home-page').classList.add('hidden');
-            document.getElementById('gig-detail-page').classList.remove('hidden');
-            window.scrollTo(0, 0); 
-            
-            selectPackage('basic');
-        }
-
-        function selectPackage(tier) {
-            ['basic', 'standard', 'premium'].forEach(pkg => {
-                document.getElementById(`pkg-${pkg}`).classList.remove('pkg-active');
-                document.getElementById(`pkg-${pkg}`).classList.add('pkg-inactive');
-            });
-            document.getElementById(`pkg-${tier}`).classList.remove('pkg-inactive');
-            document.getElementById(`pkg-${tier}`).classList.add('pkg-active');
-
-            let pkgData = packageData[currentActiveCategory][tier];
-            let price = currentActiveGig.prices[tier];
-
-            document.getElementById('detail-price').innerText = `$${price}`; 
-            document.getElementById('pkg-name-display').innerText = pkgData.name;
-            document.getElementById('pkg-desc').innerText = pkgData.desc;
-            document.getElementById('pkg-delivery').innerText = pkgData.delivery;
-
-            const featuresContainer = document.getElementById('pkg-features');
-            featuresContainer.innerHTML = '';
-            pkgData.features.forEach(feature => {
-                let svgIcon = feature.active 
-                    ? `<svg class="w-4 h-4 text-black font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>`
-                    : `<svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
-                
-                let textClass = feature.active ? 'check-active' : 'check-inactive';
-                featuresContainer.innerHTML += `<li class="flex items-center gap-3 ${textClass}">${svgIcon} ${feature.text}</li>`;
-            });
-
-            let message = encodeURIComponent(`Hi Atiq! I want to order the *${pkgData.name}* (${tier.toUpperCase()}) package for your service: "${currentActiveGig.title}" priced at $${price}.`);
-            document.getElementById('detail-wa-link').href = `https://wa.me/${myWhatsAppNumber}?text=${message}`;
-        }
-
-        function showHomePage() {
-            document.getElementById('gig-detail-page').classList.add('hidden');
-            document.getElementById('home-page').classList.remove('hidden');
-            window.scrollTo(0, 0);
-        }
-
-        function changeTab(category, btnElement) {
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('tab-active');
-                btn.classList.add('tab-inactive');
-            });
-            btnElement.classList.remove('tab-inactive');
-            btnElement.classList.add('tab-active');
-            renderGigs(category);
-        }
-
-        window.onload = () => { renderGigs('audio'); };
-    </script>
 </body>
 </html>
