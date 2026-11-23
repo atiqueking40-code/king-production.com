@@ -1,230 +1,2191 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Production House | Premium Audio Services & Gigs</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .fiverr-green { color: #1dbf73; }
-        .bg-fiverr-green { background-color: #1dbf73; }
-        .hover-fiverr-green:hover { background-color: #19a463; }
-        body { background-color: #f7f9fa; color: #404145; }
-        .gig-card { background: #ffffff; border: 1px solid #e4e5e7; transition: all 0.2s ease; cursor: pointer; }
-        .gig-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    </style>
-</head>
-<body class="antialiased font-sans">
+<!-- wp:html -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Header / Navbar -->
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <span class="text-3xl font-black text-gray-900 tracking-tight">KING <span class="fiverr-green">PRODUCTION</span> HOUSE</span>
+<style>
+:root {
+    --brand-green: #1dbf73;
+    --brand-green-dark: #15995a;
+    --studio-dark: #0f172a;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+#wpadminbar,
+body > header,
+body > footer,
+.site-header,
+.site-footer,
+.entry-header,
+.page-header,
+.wp-block-post-title,
+.ast-Builder-grid-row-container,
+#masthead,
+#colophon {
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+}
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+}
+#kph-app-root {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    z-index: 2147483640 !important;
+    background-color: #f8fafc !important;
+    scroll-behavior: smooth;
+}
+#kph-app-root button,
+#kph-app-root [type="button"],
+#kph-app-root [type="submit"],
+#kph-app-root a {
+    outline: none !important;
+    box-shadow: none;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    text-decoration: none !important;
+}
+.pro-header {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 2px 14px rgba(15, 23, 42, 0.04) !important;
+    width: 100% !important;
+}
+.pro-hero {
+    background: radial-gradient(circle at 85% 20%, rgba(29, 191, 115, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 15% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 45%),
+                linear-gradient(135deg, #0b1120 0%, #111827 55%, #0f172a 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+#kph-app-root button.pro-tab-btn {
+    padding: 10px 20px !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    font-size: 0.86rem !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+#kph-app-root button.pro-tab-active {
+    background-color: #1dbf73 !important;
+    color: #ffffff !important;
+    border: 1px solid #1dbf73 !important;
+    box-shadow: 0 6px 16px rgba(29, 191, 115, 0.28) !important;
+}
+#kph-app-root button.pro-tab-inactive {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+    border: 1px solid #e2e8f0 !important;
+}
+#kph-app-root button.pro-tab-inactive:hover {
+    background-color: #ecfdf5 !important;
+    color: #1dbf73 !important;
+    border-color: #1dbf73 !important;
+    transform: translateY(-1px);
+}
+#kph-app-root button.sub-pill {
+    padding: 7px 15px !important;
+    border-radius: 9999px !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.18s ease !important;
+    border: 1px solid #e2e8f0 !important;
+    background-color: #ffffff !important;
+    color: #475569 !important;
+    white-space: nowrap !important;
+}
+#kph-app-root button.sub-pill:hover {
+    border-color: #1dbf73 !important;
+    color: #1dbf73 !important;
+    background-color: #f0fdf4 !important;
+}
+#kph-app-root button.sub-pill.active {
+    background-color: #1dbf73 !important;
+    color: #ffffff !important;
+    border-color: #1dbf73 !important;
+    box-shadow: 0 4px 12px rgba(29, 191, 115, 0.25) !important;
+}
+.pro-gig-card {
+    background: #ffffff !important;
+    border-radius: 14px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04) !important;
+    transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease !important;
+    overflow: hidden;
+}
+.pro-gig-card:hover {
+    transform: translateY(-4px);
+    border-color: #1dbf73 !important;
+    box-shadow: 0 14px 28px -6px rgba(29, 191, 115, 0.16) !important;
+}
+#kph-app-root button.pkg-btn {
+    transition: all 0.2s ease !important;
+    font-size: 0.86rem !important;
+    cursor: pointer !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+}
+#kph-app-root button.pkg-active {
+    border-bottom: 3px solid #1dbf73 !important;
+    color: #1dbf73 !important;
+    font-weight: 800 !important;
+    background-color: #ffffff !important;
+}
+#kph-app-root button.pkg-inactive {
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    background-color: #f8fafc !important;
+}
+#kph-app-root button.pkg-inactive:hover {
+    color: #1dbf73 !important;
+    background-color: #f0fdf4 !important;
+}
+#kph-app-root .btn-emerald {
+    background-color: #1dbf73 !important;
+    color: #ffffff !important;
+    border: 1px solid #1dbf73 !important;
+    font-weight: 700 !important;
+    border-radius: 9px !important;
+    transition: all 0.18s ease !important;
+    cursor: pointer !important;
+}
+#kph-app-root .btn-emerald:hover {
+    background-color: #15995a !important;
+    border-color: #15995a !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(29, 191, 115, 0.3) !important;
+}
+#kph-app-root .btn-dark {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border: 1px solid #0f172a !important;
+    font-weight: 700 !important;
+    border-radius: 9px !important;
+    transition: all 0.18s ease !important;
+    cursor: pointer !important;
+}
+#kph-app-root .btn-dark:hover {
+    background-color: #1dbf73 !important;
+    border-color: #1dbf73 !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(29, 191, 115, 0.25) !important;
+}
+#kph-app-root .btn-outline {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    font-weight: 700 !important;
+    border-radius: 9px !important;
+    transition: all 0.18s ease !important;
+    cursor: pointer !important;
+}
+#kph-app-root .btn-outline:hover {
+    border-color: #1dbf73 !important;
+    color: #1dbf73 !important;
+    background-color: #f0fdf4 !important;
+}
+.footer-simple-link {
+    color: #94a3b8 !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 2px 0 !important;
+    cursor: pointer !important;
+    transition: color 0.18s ease, transform 0.18s ease !important;
+}
+.footer-simple-link:hover {
+    color: #1dbf73 !important;
+    background: transparent !important;
+    border: none !important;
+    transform: translateX(2px);
+}
+.footer-gateway-badge {
+    color: #94a3b8 !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 2px 0 !important;
+    cursor: default !important;
+    user-select: none !important;
+}
+.check-active { color: #0f172a; font-weight: 600; }
+.check-inactive { color: #94a3b8; font-weight: 400; text-decoration: line-through; }
+.social-icon-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #64748b;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.social-fb:hover {
+    background: #1877F2 !important;
+    color: #ffffff !important;
+    border-color: #1877F2 !important;
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 6px 14px rgba(24, 119, 242, 0.38);
+}
+.social-yt:hover {
+    background: #FF0000 !important;
+    color: #ffffff !important;
+    border-color: #FF0000 !important;
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 6px 14px rgba(255, 0, 0, 0.38);
+}
+.social-ig:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+    color: #ffffff !important;
+    border-color: #d6249f !important;
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 6px 14px rgba(214, 36, 159, 0.38);
+}
+.social-tt:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-color: #25F4EE !important;
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: -2px -2px 8px rgba(37, 244, 238, 0.55), 2px 2px 8px rgba(254, 44, 85, 0.55);
+}
+.social-gh:hover {
+    background: #24292F !important;
+    color: #ffffff !important;
+    border-color: #24292F !important;
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 6px 14px rgba(36, 41, 47, 0.38);
+}
+.pay-gateway-tile {
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    padding: 8px 10px !important;
+    cursor: pointer !important;
+    transition: all 0.16s ease !important;
+    background: #ffffff !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 58px;
+}
+.pay-gateway-tile:hover {
+    border-color: #1dbf73 !important;
+    background: #f0fdf4 !important;
+}
+.pay-gateway-tile.selected {
+    border-color: #1dbf73 !important;
+    background: rgba(29, 191, 115, 0.05) !important;
+    box-shadow: 0 0 0 2px rgba(29, 191, 115, 0.15) !important;
+}
+@keyframes kphSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.kph-loader-ring {
+    width: 42px;
+    height: 42px;
+    border: 3.5px solid rgba(29, 191, 115, 0.2);
+    border-top-color: #1dbf73;
+    border-radius: 50%;
+    animation: kphSpin 0.8s linear infinite;
+}
+</style>
+
+<div id="kph-app-root">
+    <!-- HEADER -->
+    <header class="pro-header py-3.5 px-4 sm:px-8 lg:px-12 sticky top-0 z-40">
+        <div class="w-full flex flex-wrap justify-between items-center gap-4">
+            <div data-action="go-home" class="flex items-center gap-3.5 cursor-pointer group">
+                <div class="w-11 h-11 rounded-xl bg-[#1dbf73] text-white flex items-center justify-center shadow-sm group-hover:bg-[#15995a] transition-colors">
+                    <i class="fa-solid fa-crown text-lg"></i>
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 group-hover:text-[#1dbf73] transition-colors leading-none">
+                    Zonix Casino Production House<span class="text-[#1dbf73]">.</span>
+                </h1>
             </div>
-            <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-gray-700">
-                <a href="#gigs" class="hover:text-green-600">Pro Services</a>
-                <a href="https://whop.com" target="_blank" class="bg-fiverr-green text-white px-5 py-2.5 rounded-md hover-fiverr-green transition shadow-sm">Order Custom Gig</a>
+            <div class="flex items-center gap-3 sm:gap-4">
+                <div class="hidden lg:flex items-center gap-2">
+                    <a data-social="Facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a data-social="YouTube" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-yt" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a data-social="Instagram" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a data-social="TikTok" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a data-social="GitHub" href="https://www.github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-gh" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="h-8 w-[1px] bg-slate-200 hidden sm:block"></div>
+                <div class="flex flex-col items-end gap-1.5">
+                    <div id="auth-buttons-group" class="flex items-center gap-2">
+                        <button type="button" data-action="open-signin" class="btn-outline px-3.5 py-1.5 text-xs">Sign In</button>
+                        <button type="button" data-action="open-signup" class="btn-dark px-3.5 py-1.5 text-xs">Sign Up</button>
+                    </div>
+                    <button type="button" id="my-account-btn" data-action="open-account" class="hidden btn-dark px-4 py-1.5 text-xs items-center justify-center gap-2 w-full">
+                        <i class="fa-solid fa-user-check text-[#1dbf73]"></i>
+                        <span>My Account</span>
+                    </button>
+                    <button type="button" data-action="open-cart" class="btn-outline px-3.5 py-1.5 text-xs flex items-center justify-center gap-2 w-full" title="View Cart">
+                        <i class="fa-solid fa-cart-shopping text-[#1dbf73]"></i>
+                        <span>Cart</span>
+                        <span id="cart-count-badge" class="bg-[#1dbf73] text-white text-[10px] font-extrabold px-1.5 py-0.2 rounded-full">0</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-20 px-4 text-center relative overflow-hidden">
-        <div class="max-w-4xl mx-auto relative z-10">
-            <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6">Find the perfect <span class="fiverr-green">freelance audio services</span> for your music</h1>
-            <p class="text-lg text-gray-300 mb-8">Radio-ready mixing, custom beats, podcast cleanup, vocal tuning, and professional sound design by elite engineers.</p>
-            <div class="flex justify-center">
-                <a href="#gigs" class="bg-fiverr-green text-white font-bold px-8 py-3.5 rounded-md hover-fiverr-green transition text-lg shadow-lg">Explore All Gigs</a>
+    <!-- TRANSITION LOADER -->
+    <div id="view-transition-loader" class="hidden w-full px-4 sm:px-8 lg:px-12 py-28 flex-col items-center justify-center text-center">
+        <div class="kph-loader-ring mb-4"></div>
+        <h4 id="transition-loader-title" class="text-base font-extrabold text-slate-800">Loading Studio Service...</h4>
+        <p class="text-xs text-slate-500 mt-1">Preparing 5 high-resolution showcase slides &amp; custom package tiers</p>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div id="home-page" class="w-full">
+        <section class="w-full px-4 sm:px-8 lg:px-12 pt-5 pb-3">
+            <div class="pro-hero rounded-2xl py-11 sm:py-14 px-6 sm:px-12 text-center text-white shadow-lg w-full">
+                <div class="relative z-10 max-w-5xl mx-auto">
+                    <h2 class="text-2xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+                        World-Class <span class="text-[#1dbf73]">Audio, Video, Design, Web &amp; App Development</span> Services
+                    </h2>
+                    <p class="text-xs sm:text-base text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+                        Billboard-quality mixing &amp; mastering, Hollywood VFX video editing, commercial photo retouching, custom UI/UX web design templates, and full-stack web &amp; mobile app development. Add multiple services to your cart or order directly with secure global checkout.
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 max-w-4xl mx-auto">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-3">
+                            <div class="text-xl font-extrabold text-white">135</div>
+                            <div class="text-[11px] font-semibold uppercase tracking-wider text-emerald-400">Unique Services</div>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-3">
+                            <div class="text-xl font-extrabold text-amber-400">★ 4.9 / 5</div>
+                            <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-300">Client Rating</div>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-3">
+                            <div class="text-xl font-extrabold text-white">675</div>
+                            <div class="text-[11px] font-semibold uppercase tracking-wider text-emerald-400">Product Showcases</div>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-3">
+                            <div class="text-xl font-extrabold text-white">100%</div>
+                            <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-300">Escrow Protected</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Filter Bar -->
+        <section class="w-full px-4 sm:px-8 lg:px-12 mt-3">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm w-full">
+                <div class="flex flex-wrap gap-2.5 justify-center sm:justify-start">
+                    <button type="button" data-tab="audio" class="pro-tab-btn pro-tab-active" id="tab-audio">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Audio Services (10)</span>
+                    </button>
+                    <button type="button" data-tab="video" class="pro-tab-btn pro-tab-inactive" id="tab-video">
+                        <i class="fa-solid fa-film"></i>
+                        <span>Video Services (10)</span>
+                    </button>
+                    <button type="button" data-tab="photo" class="pro-tab-btn pro-tab-inactive" id="tab-photo">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Photo Editing (5)</span>
+                    </button>
+                    <button type="button" data-tab="webdesign" class="pro-tab-btn pro-tab-inactive" id="tab-webdesign">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <span>Web Design (90)</span>
+                    </button>
+                    <button type="button" data-tab="development" class="pro-tab-btn pro-tab-inactive" id="tab-development">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <span>Development (20)</span>
+                    </button>
+                </div>
+                <div id="subcategory-bar" class="hidden mt-3.5 pt-3.5 border-t border-slate-100 flex-wrap gap-2 items-center"></div>
+            </div>
+        </section>
+
+        <!-- Gigs Grid Container -->
+        <section class="w-full px-4 sm:px-8 lg:px-12 py-7">
+            <div id="grid-section-loader" class="hidden py-20 flex-col items-center justify-center text-center bg-white rounded-2xl border border-slate-200 shadow-sm w-full">
+                <div class="kph-loader-ring mb-3.5"></div>
+                <h4 id="grid-loader-text" class="text-sm sm:text-base font-extrabold text-slate-800">Loading Category Services...</h4>
+                <p class="text-xs text-slate-500 mt-1">Fetching verified studio packages &amp; product galleries</p>
+            </div>
+            <div id="gigs-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 w-full"></div>
+        </section>
+
+        <!-- 25 Frequently Asked Questions Section -->
+        <section id="faq-section" class="w-full px-4 sm:px-8 lg:px-12 py-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-9 shadow-sm w-full">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#1dbf73] bg-emerald-50 border border-emerald-200 px-3.5 py-1 rounded-full">
+                        Help Center &bull; 25 Answered Questions
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">Frequently Asked Questions</h3>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">Everything you need to know about our Audio, Video, Photo, Web Design &amp; Development services.</p>
+                </div>
+                <div id="faq-grid-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- DETAILED GIG PAGE -->
+    <div id="gig-detail-page" class="hidden min-h-screen pb-14 w-full">
+        <div class="w-full px-4 sm:px-8 lg:px-12 py-8 flex flex-col lg:flex-row gap-9">
+            <div class="lg:w-2/3">
+                <button type="button" data-action="back-home" class="btn-outline px-4 py-2 text-xs mb-5 inline-flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left text-[#1dbf73]"></i>
+                    <span>Back to Marketplace</span>
+                </button>
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span id="detail-category-badge" class="bg-emerald-50 text-[#15995a] border border-emerald-200 text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full">
+                        STUDIO SERVICE
+                    </span>
+                    <span class="text-xs font-bold text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
+                        ★ Top Rated Studio
+                    </span>
+                </div>
+                <h1 id="detail-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-5 leading-snug"></h1>
+                <div class="rounded-2xl border border-slate-200 bg-slate-900 w-full h-80 sm:h-[460px] mb-3.5 overflow-hidden relative shadow-md">
+                    <img id="detail-img" src="" alt="Showcase" class="w-full h-full object-cover transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-3.5 left-4 right-24 text-white pointer-events-none">
+                        <span id="detail-slide-tag" class="inline-block bg-[#1dbf73] text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded mb-1">SLIDE 1 • STUDIO SHOWCASE</span>
+                        <p id="detail-slide-caption" class="text-xs sm:text-sm font-bold text-white drop-shadow"></p>
+                    </div>
+                    <button type="button" data-action="prev-img" aria-label="Previous Image" class="btn-outline !rounded-full absolute left-3.5 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <button type="button" data-action="next-img" aria-label="Next Image" class="btn-outline !rounded-full absolute right-3.5 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <div class="absolute bottom-3.5 right-4 bg-slate-900/85 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm border border-white/15">
+                        <i class="fa-regular fa-images text-[#1dbf73] mr-1"></i>
+                        <span id="img-counter">1 / 5</span>
+                    </div>
+                </div>
+                <div id="detail-thumbnails" class="grid grid-cols-5 gap-3 mb-7"></div>
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm mb-7">
+                    <h2 class="text-base sm:text-lg font-extrabold text-slate-900 mb-3.5 pb-3 border-b border-slate-100 flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-[#1dbf73]"></i>
+                        <span>Product-Specific Overview &amp; Deliverables</span>
+                    </h2>
+                    <ul id="detail-summary" class="space-y-2.5 text-slate-700 font-medium text-xs sm:text-sm list-disc pl-5"></ul>
+                </div>
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-3.5">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80" alt="Ethan Vance" class="w-14 h-14 rounded-full object-cover border-2 border-[#1dbf73]">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-base font-extrabold text-slate-900">Ethan Vance</h3>
+                                    <span class="bg-blue-50 text-blue-700 border border-blue-200 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full">PRO VERIFIED</span>
+                                </div>
+                                <p class="text-slate-500 text-xs font-medium">Founder &amp; Lead Architect, Zonix Casino Production House</p>
+                                <div class="flex items-center text-amber-500 font-bold text-xs mt-0.5">
+                                    ★ <span id="profile-rating" class="ml-1">4.9</span>
+                                    <span class="text-slate-500 font-medium ml-1">(<span id="profile-reviews">840</span> verified client reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="profile-bio" class="text-slate-600 leading-relaxed text-xs sm:text-sm"></p>
+                </div>
+            </div>
+            <div class="lg:w-1/3 relative">
+                <div class="sticky top-24 bg-white rounded-2xl border border-slate-200 shadow-lg overflow-hidden">
+                    <div class="flex text-center w-full">
+                        <button type="button" id="pkg-basic" data-pkg="basic" class="w-1/3 py-3.5 pkg-btn pkg-active">Basic</button>
+                        <button type="button" id="pkg-standard" data-pkg="standard" class="w-1/3 py-3.5 pkg-btn pkg-inactive">Standard</button>
+                        <button type="button" id="pkg-premium" data-pkg="premium" class="w-1/3 py-3.5 pkg-btn pkg-inactive">Premium</button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start gap-2 mb-3">
+                            <span id="pkg-name-display" class="font-extrabold text-slate-900 text-sm sm:text-base leading-snug"></span>
+                            <span id="detail-price" class="text-2xl font-extrabold text-[#1dbf73] shrink-0"></span>
+                        </div>
+                        <p id="pkg-desc" class="text-slate-600 text-xs sm:text-sm mb-4 min-h-[42px] leading-relaxed"></p>
+                        <div class="flex items-center gap-3 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200/80 p-3 rounded-xl mb-5">
+                            <span class="flex items-center gap-1.5">
+                                <i class="fa-regular fa-clock text-[#1dbf73]"></i>
+                                <span id="pkg-delivery"></span>
+                            </span>
+                            <span class="text-slate-300">|</span>
+                            <span class="flex items-center gap-1.5">
+                                <i class="fa-solid fa-rotate text-[#1dbf73]"></i>
+                                <span>Unlimited Revisions</span>
+                            </span>
+                        </div>
+                        <ul id="pkg-features" class="text-xs sm:text-sm mb-6 space-y-2.5"></ul>
+                        <div class="space-y-2.5">
+                            <button type="button" data-action="order-current" class="btn-emerald w-full py-3.5 text-xs sm:text-sm flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>Order Now</span>
+                            </button>
+                            <button type="button" data-action="cart-current" class="btn-dark w-full py-3 text-xs sm:text-sm flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <span>Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Main Gigs Gallery -->
-    <main id="gigs" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="flex items-center justify-between mb-8 border-b border-gray-200 pb-4">
-            <h2 class="text-2xl font-bold text-gray-900">Featured Professional Gigs</h2>
-            <span class="text-sm text-gray-500 font-medium">Active Services Available</span>
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-300 pt-12 pb-9 border-t border-slate-800 mt-10 w-full">
+        <div class="w-full px-4 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-9 border-b border-slate-800">
+                <div>
+                    <div data-action="go-home" class="flex items-center gap-2.5 mb-3 cursor-pointer group">
+                        <div class="w-8 h-8 rounded-lg bg-[#1dbf73] text-white flex items-center justify-center">
+                            <i class="fa-solid fa-crown text-xs"></i>
+                        </div>
+                        <span class="text-lg font-extrabold text-white group-hover:text-[#1dbf73] transition-colors">Zonix Casino Production House<span class="text-[#1dbf73]">.</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Full-service digital production house offering Audio, Video, Photo, Web Design templates, and Custom App Development.
+                    </p>
+                    <div class="flex items-center gap-2">
+                        <a data-social="Facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-fb !bg-slate-800 !border-slate-700 !text-slate-300" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a data-social="YouTube" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-yt !bg-slate-800 !border-slate-700 !text-slate-300" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a data-social="Instagram" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-ig !bg-slate-800 !border-slate-700 !text-slate-300" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a data-social="TikTok" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-tt !bg-slate-800 !border-slate-700 !text-slate-300" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a data-social="GitHub" href="https://www.github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-gh !bg-slate-800 !border-slate-700 !text-slate-300" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-white mb-3.5">Marketplace Categories</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="javascript:void(0)" data-footer-cat="audio" class="footer-simple-link">Audio Services (10)</a></li>
+                        <li><a href="javascript:void(0)" data-footer-cat="video" class="footer-simple-link">Video &amp; VFX Services (10)</a></li>
+                        <li><a href="javascript:void(0)" data-footer-cat="photo" class="footer-simple-link">Photo Editing (5)</a></li>
+                        <li><a href="javascript:void(0)" data-footer-cat="webdesign" class="footer-simple-link">Web Design Templates (90)</a></li>
+                        <li><a href="javascript:void(0)" data-footer-cat="development" class="footer-simple-link">Web &amp; App Development (20)</a></li>
+                    </ul>
+                </div>
+                <!-- NON-CLICKABLE PAYMENT GATEWAY ICONS ONLY -->
+                <div>
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-white mb-3.5">Payment Gateways</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li>
+                            <div class="footer-gateway-badge">
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#635BFF"/><path d="M11.2 9.4C11.2 8.7 11.8 8.4 12.6 8.4C13.7 8.4 14.9 8.8 15.9 9.4V6.3C14.8 5.9 13.7 5.7 12.6 5.7C9.8 5.7 7.9 7.2 7.9 9.6C7.9 13.4 13.1 12.8 13.1 14.5C13.1 15.3 12.3 15.6 11.4 15.6C10.1 15.6 8.7 15.1 7.6 14.3V17.5C8.8 18.1 10.1 18.3 11.4 18.3C14.3 18.3 16.4 16.9 16.4 14.4C16.4 10.3 11.2 11 11.2 9.4Z" fill="#ffffff"/></svg>
+                                <span>Stripe</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-gateway-badge">
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#003087"/><path d="M15.8 7.2C15.2 6.5 14.1 6.2 12.7 6.2H8.6C8.2 6.2 7.9 6.5 7.8 6.9L6.1 17.4C6 17.7 6.2 18 6.5 18H9L9.6 14.1L9.5 14.2C9.6 13.8 9.9 13.5 10.3 13.5H11.9C14.8 13.5 16.9 12.3 17.5 9.1C17.7 8.3 17.5 7.7 15.8 7.2Z" fill="#0079C1"/><path d="M9.8 11.2L10.3 8.1H12.6C13.7 8.1 14.4 8.5 14.2 9.7C14 11 13.1 11.2 11.9 11.2H9.8Z" fill="#ffffff"/></svg>
+                                <span>PayPal</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-gateway-badge">
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#9FE870"/><path d="M7.5 7.5L10.3 11.5L7 15.5H13.5L12.6 17.5H15L18 7.5H7.5Z" fill="#163300"/></svg>
+                                <span>Wise</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-gateway-badge">
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#FF6243"/><path d="M6.5 8L9.5 16.5L12 11.5L14.5 16.5L17.5 8H15.2L13.8 12.6L12 8.8L10.2 12.6L8.8 8H6.5Z" fill="#ffffff"/></svg>
+                                <span>Whop</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-gateway-badge">
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#FF4800"/><circle cx="12" cy="12" r="5.5" stroke="#ffffff" stroke-width="2.2"/></svg>
+                                <span>Payoneer</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-white mb-3.5">Social Media Links</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li>
+                            <a data-social="Facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="footer-simple-link">
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="5" fill="#1877F2"/>
+                                    <path d="M15.12 12.6L15.52 9.98H13.01V8.28C13.01 7.56 13.36 6.86 14.49 6.86H15.64V4.63C15.64 4.63 14.6 4.45 13.6 4.45C11.52 4.45 10.16 5.71 10.16 8V9.98H7.85V12.6H10.16V19.55H13.01V12.6H15.12Z" fill="#ffffff"/>
+                                </svg>
+                                <span>Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-social="YouTube" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="footer-simple-link">
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="5" fill="#FF0000"/>
+                                    <path d="M10 8.5V15.5L16 12L10 8.5Z" fill="#ffffff"/>
+                                </svg>
+                                <span>YouTube</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-social="Instagram" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="footer-simple-link">
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="5" fill="#d6249f"/>
+                                    <rect x="6" y="6" width="12" height="12" rx="3.5" stroke="#ffffff" stroke-width="1.8"/>
+                                    <circle cx="12" cy="12" r="2.8" stroke="#ffffff" stroke-width="1.8"/>
+                                    <circle cx="15.3" cy="8.7" r="0.9" fill="#ffffff"/>
+                                </svg>
+                                <span>Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-social="TikTok" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="footer-simple-link">
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="5" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+                                    <path d="M15.6 8.2C14.8 7.7 14.3 6.8 14.3 5.8H12.2V14.2C12.2 15.2 11.4 16 10.4 16C9.4 16 8.6 15.2 8.6 14.2C8.6 13.2 9.4 12.4 10.4 12.4C10.6 12.4 10.8 12.4 11 12.5V10.3C10.8 10.3 10.6 10.3 10.4 10.3C8.2 10.3 6.5 12 6.5 14.2C6.5 16.4 8.2 18.1 10.4 18.1C12.6 18.1 14.3 16.4 14.3 14.2V9.9C15.1 10.5 16.1 10.8 17.2 10.8V8.7C16.6 8.7 16.1 8.5 15.6 8.2Z" fill="#ffffff"/>
+                                </svg>
+                                <span>TikTok</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-social="GitHub" href="https://www.github.com" target="_blank" rel="noopener noreferrer" class="footer-simple-link">
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="5" fill="#24292F"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 5.2C8.24 5.2 5.2 8.24 5.2 12C5.2 15.01 7.15 17.55 9.85 18.45C10.19 18.51 10.31 18.3 10.31 18.12C10.31 17.96 10.3 17.42 10.3 16.85C8.59 17.17 8.15 16.43 8.01 16.04C7.93 15.84 7.6 15.24 7.31 15.08C7.07 14.95 6.73 14.63 7.3 14.62C7.84 14.61 8.22 15.12 8.35 15.32C8.96 16.35 9.94 16.06 10.33 15.88C10.39 15.44 10.57 15.14 10.76 14.97C9.25 14.8 7.67 14.21 7.67 11.61C7.67 10.87 7.93 10.26 8.37 9.78C8.3 9.61 8.06 8.91 8.44 7.97C8.44 7.97 9.01 7.79 10.31 8.67C10.85 8.52 11.43 8.44 12.01 8.44C12.59 8.44 13.17 8.52 13.71 8.67C15.01 7.78 15.58 7.97 15.58 7.97C15.96 8.91 15.72 9.61 15.65 9.78C16.09 10.26 16.35 10.86 16.35 11.61C16.35 14.22 14.76 14.8 13.25 14.97C13.5 15.18 13.71 15.58 13.71 16.21C13.71 17.11 13.7 17.83 13.7 18.12C13.7 18.3 13.83 18.52 14.17 18.45C16.86 17.55 18.8 15 18.8 12C18.8 8.24 15.76 5.2 12 5.2Z" fill="#ffffff"/>
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-500">
+                <p>&copy; 2026 Zonix Casino Production House. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#faq-section" class="footer-simple-link">25 FAQs</a>
+                </div>
+            </div>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            <!-- Gig 1: Mixing & Mastering -->
-            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
-                <div class="h-48 bg-gray-100 overflow-hidden relative">
-                    <img src="Audio_soundwaves_on_dual_monitors_890126cb_2K.jpg" alt="Mixing & Mastering" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-2">
-                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
-                            <span class="text-xs font-bold text-gray-800">King Production</span>
-                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 5.0</span>
-                        </div>
-                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will radio ready mix and master your music as a sound engineer</h3>
-                    </div>
-                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
-                        <span class="text-lg font-bold text-gray-900">$30</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gig 2: Hip Hop Beat Making -->
-            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
-                <div class="h-48 bg-gray-100 overflow-hidden relative">
-                    <img src="I%20will%20produce%20a%20custom%20Hip%20Hop%20Beat%201.jpg" alt="Hip Hop Beat" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-2">
-                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
-                            <span class="text-xs font-bold text-gray-800">King Production</span>
-                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 4.9</span>
-                        </div>
-                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will produce a custom Hip Hop Beat</h3>
-                    </div>
-                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
-                        <span class="text-lg font-bold text-gray-900">$40</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gig 3: Podcast Audio Cleanup -->
-            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
-                <div class="h-48 bg-gray-100 overflow-hidden relative">
-                    <img src="I%20will%20do%20podcast%20audio%20cleanup%20and%20noise%20reduction%201.jpg" alt="Podcast Cleanup" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-2">
-                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
-                            <span class="text-xs font-bold text-gray-800">King Production</span>
-                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 5.0</span>
-                        </div>
-                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will do podcast audio cleanup and noise reduction</h3>
-                    </div>
-                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
-                        <span class="text-lg font-bold text-gray-900">$20</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gig 4: Lo-Fi Chill Track -->
-            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
-                <div class="h-48 bg-gray-100 overflow-hidden relative">
-                    <img src="I%20will%20create%20a%20custom%20Lo-Fi%20chill%20track%201.jpg" alt="Lo-Fi Chill Track" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-2">
-                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
-                            <span class="text-xs font-bold text-gray-800">King Production</span>
-                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 4.9</span>
-                        </div>
-                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will create a custom Lo-Fi chill track</h3>
-                    </div>
-                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
-                        <span class="text-lg font-bold text-gray-900">$25</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gig 5: Audio Restoration -->
-            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
-                <div class="h-48 bg-gray-100 overflow-hidden relative">
-                    <img src="I%20will%20restore%20and%20enhance%20old%20poor%20audio%20recordings%201.jpg" alt="Audio Restoration" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-2">
-                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
-                            <span class="text-xs font-bold text-gray-800">King Production</span>
-                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 5.0</span>
-                        </div>
-                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will restore and enhance old poor audio recordings</h3>
-                    </div>
-                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
-                        <span class="text-lg font-bold text-gray-900">$25</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gig 6: Professional Voiceover -->
-            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
-                <div class="h-48 bg-gray-100 overflow-hidden relative">
-                    <img src="I%20will%20record%20a%20professional%20voiceover%201.jpg" alt="Professional Voiceover" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-2">
-                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
-                            <span class="text-xs font-bold text-gray-800">King Production</span>
-                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 4.9</span>
-                        </div>
-                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will record a professional voiceover</h3>
-                    </div>
-                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
-                        <span class="text-lg font-bold text-gray-900">$30</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gig 7: EDM Ghost Production -->
-            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
-                <div class="h-48 bg-gray-100 overflow-hidden relative">
-                    <img src="I%20will%20produce%20EDM%20ghost%20production%20for%20you%201.jpg" alt="EDM Ghost Production" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-2">
-                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
-                            <span class="text-xs font-bold text-gray-800">King Production</span>
-                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 5.0</span>
-                        </div>
-                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will produce EDM ghost production for you</h3>
-                    </div>
-                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
-                        <span class="text-lg font-bold text-gray-900">$50</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gig 8: Vocal Tuning -->
-            <div class="gig-card rounded-lg overflow-hidden flex flex-col">
-                <div class="h-48 bg-gray-100 overflow-hidden relative">
-                    <img src="I%20will%20tune%20your%20vocals%20to%20sound%20perfect%201.jpg" alt="Vocal Tuning" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-2">
-                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold">K</div>
-                            <span class="text-xs font-bold text-gray-800">King Production</span>
-                            <span class="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">★ 4.9</span>
-                        </div>
-                        <h3 class="text-sm font-medium text-gray-900 hover:text-green-600 line-clamp-2 mb-3">I will tune your vocals to sound perfect</h3>
-                    </div>
-                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span class="text-xs text-gray-500 uppercase font-semibold">Starting at</span>
-                        <span class="text-lg font-bold text-gray-900">$25</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 mt-20 py-8 text-center text-sm text-gray-500">
-        <p>© 2026 King Production House. All rights reserved.</p>
     </footer>
 
-</body>
-</html>
+    <!-- MODAL 1: SIGN IN / SIGN UP -->
+    <div id="authModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+        <div class="bg-white max-w-sm w-full rounded-2xl border border-slate-200 shadow-2xl overflow-hidden">
+            <div class="flex border-b border-slate-200">
+                <button type="button" id="tab-signin-btn" data-action="switch-signin" class="w-1/2 py-3 text-xs font-extrabold border-b-2 border-[#1dbf73] text-[#1dbf73] bg-white">Sign In</button>
+                <button type="button" id="tab-signup-btn" data-action="switch-signup" class="w-1/2 py-3 text-xs font-bold text-slate-500 bg-slate-50 hover:text-slate-900">Sign Up</button>
+            </div>
+            <div class="p-5 relative">
+                <button type="button" data-action="close-auth" class="absolute top-3.5 right-4 text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark"></i></button>
+                <form id="signinForm" class="space-y-3.5">
+                    <div>
+                        <h3 class="text-base font-extrabold text-slate-900">Welcome Back</h3>
+                        <p class="text-[11px] text-slate-500">Sign in to access your studio account.</p>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-700 mb-1">Email Address</label>
+                        <input type="email" id="signin-email" required placeholder="you@example.com" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-xs focus:border-[#1dbf73] focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-700 mb-1">Password</label>
+                        <input type="password" id="signin-password" required placeholder="••••••••" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-xs focus:border-[#1dbf73] focus:outline-none">
+                    </div>
+                    <button type="submit" class="btn-emerald w-full py-2.5 text-xs">Sign In</button>
+                </form>
+                <form id="signupForm" class="space-y-3.5 hidden">
+                    <div>
+                        <h3 class="text-base font-extrabold text-slate-900">Create Account</h3>
+                        <p class="text-[11px] text-slate-500">Create your free studio client account.</p>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-700 mb-1">Full Name</label>
+                        <input type="text" id="signup-name" required placeholder="Alex Mercer" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-xs focus:border-[#1dbf73] focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-700 mb-1">Email Address</label>
+                        <input type="email" id="signup-email" required placeholder="alex@brandstudio.com" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-xs focus:border-[#1dbf73] focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-700 mb-1">Create Password</label>
+                        <input type="password" id="signup-password" required placeholder="Minimum 6 characters" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-xs focus:border-[#1dbf73] focus:outline-none">
+                    </div>
+                    <button type="submit" class="btn-dark w-full py-2.5 text-xs">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: MY ACCOUNT DASHBOARD -->
+    <div id="myAccountModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+        <div class="bg-white max-w-lg w-full rounded-2xl border border-slate-200 shadow-2xl overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3.5 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-user-shield text-[#1dbf73]"></i>
+                    <span class="font-extrabold text-xs uppercase tracking-wider">My Account Dashboard</span>
+                </div>
+                <button type="button" data-action="close-account" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-5 max-h-[80vh] overflow-y-auto space-y-5">
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 flex items-center justify-between">
+                    <div>
+                        <span class="text-[10px] font-extrabold uppercase text-[#1dbf73] block">Verified Member</span>
+                        <h4 id="account-modal-name" class="font-extrabold text-sm text-slate-900">Member</h4>
+                        <p id="account-modal-email" class="text-xs text-slate-500"></p>
+                    </div>
+                    <button type="button" data-action="sign-out" class="btn-outline px-3 py-1.5 text-[11px]">
+                        <i class="fa-solid fa-right-from-bracket mr-1"></i> Sign Out
+                    </button>
+                </div>
+                <div>
+                    <h5 class="text-xs font-extrabold uppercase tracking-wider text-slate-800 mb-2 flex items-center gap-1.5">
+                        <i class="fa-solid fa-box-open text-[#1dbf73]"></i>
+                        <span>My Saved Orders (<span id="account-orders-count">0</span>)</span>
+                    </h5>
+                    <div id="account-orders-list" class="space-y-2 max-h-44 overflow-y-auto"></div>
+                </div>
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h5 class="text-xs font-extrabold uppercase tracking-wider text-slate-800 flex items-center gap-1.5">
+                            <i class="fa-solid fa-cart-shopping text-[#1dbf73]"></i>
+                            <span>Saved Cart Items (<span id="account-cart-count">0</span>)</span>
+                        </h5>
+                        <button type="button" data-action="account-to-cart" class="btn-emerald px-2.5 py-1 text-[10px]">Open Cart</button>
+                    </div>
+                    <div id="account-cart-list" class="space-y-2 max-h-36 overflow-y-auto"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: CART DRAWER -->
+    <div id="cartDrawerModal" class="fixed inset-0 z-50 hidden justify-end bg-slate-900/60 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-sm h-full flex flex-col justify-between shadow-2xl">
+            <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-900 text-white">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-cart-shopping text-[#1dbf73] text-xs"></i>
+                    <h3 class="font-extrabold text-sm">Your Studio Cart</h3>
+                </div>
+                <button type="button" data-action="close-cart" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="cart-items-list" class="p-4 flex-1 overflow-y-auto space-y-2.5"></div>
+            <div class="p-4 border-t border-slate-200 bg-slate-50">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-xs font-bold text-slate-600">Estimated Total</span>
+                    <span id="cart-total-price" class="text-xl font-extrabold text-slate-900">$0</span>
+                </div>
+                <button type="button" data-action="cart-checkout" class="btn-emerald w-full py-3 text-xs flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-bolt text-[11px]"></i>
+                    <span>Order Cart Items Now</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4: STUDIO EXPRESS ORDER -->
+    <div id="orderCheckoutModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/65 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-white max-w-md w-full rounded-2xl border border-slate-200 shadow-2xl overflow-hidden my-6">
+            <div class="bg-slate-900 text-white px-5 py-3.5 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-lock text-[#1dbf73] text-xs"></i>
+                    <span class="font-extrabold text-xs uppercase tracking-wider">Studio Express Order</span>
+                </div>
+                <button type="button" data-action="close-order" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-5">
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 mb-4 flex items-center justify-between gap-3">
+                    <div class="min-w-0">
+                        <span id="modalOrderPkgBadge" class="inline-block bg-emerald-100 text-[#15995a] text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full mb-0.5">SELECTED PACKAGE</span>
+                        <h4 id="modalOrderTitle" class="font-extrabold text-xs text-slate-900 truncate">Studio Production</h4>
+                        <span id="modalOrderDelivery" class="text-[11px] font-medium text-slate-500">Fast Turnaround</span>
+                    </div>
+                    <strong id="modalOrderPrice" class="text-xl font-extrabold text-[#1dbf73] shrink-0">$30</strong>
+                </div>
+                <form id="studioOrderForm" class="space-y-3.5 text-xs">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                            <label class="block font-bold text-slate-700 text-[11px] mb-1">Full Name *</label>
+                            <input type="text" id="checkout-name-input" required placeholder="Alex Mercer" class="w-full bg-white border border-slate-300 focus:border-[#1dbf73] rounded-lg px-3 py-2 font-medium text-slate-900 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 text-[11px] mb-1">Delivery Email *</label>
+                            <input type="email" id="checkout-email-input" required placeholder="alex@domain.com" class="w-full bg-white border border-slate-300 focus:border-[#1dbf73] rounded-lg px-3 py-2 font-medium text-slate-900 focus:outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 text-[11px] mb-1.5">Payment Method *</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div data-gateway="Stripe" class="pay-gateway-tile selected">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#635BFF"/><path d="M11.2 9.4C11.2 8.7 11.8 8.4 12.6 8.4C13.7 8.4 14.9 8.8 15.9 9.4V6.3C14.8 5.9 13.7 5.7 12.6 5.7C9.8 5.7 7.9 7.2 7.9 9.6C7.9 13.4 13.1 12.8 13.1 14.5C13.1 15.3 12.3 15.6 11.4 15.6C10.1 15.6 8.7 15.1 7.6 14.3V17.5C8.8 18.1 10.1 18.3 11.4 18.3C14.3 18.3 16.4 16.9 16.4 14.4C16.4 10.3 11.2 11 11.2 9.4Z" fill="#ffffff"/></svg>
+                                        <span class="text-xs font-bold text-slate-900">Stripe</span>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-[#1dbf73] text-[11px] check-indicator"></i>
+                                </div>
+                                <span class="text-[10px] font-medium text-slate-400 mt-1">Official Gateway</span>
+                            </div>
+                            <div data-gateway="PayPal" class="pay-gateway-tile">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#003087"/><path d="M15.8 7.2C15.2 6.5 14.1 6.2 12.7 6.2H8.6C8.2 6.2 7.9 6.5 7.8 6.9L6.1 17.4C6 17.7 6.2 18 6.5 18H9L9.6 14.1L9.5 14.2C9.6 13.8 9.9 13.5 10.3 13.5H11.9C14.8 13.5 16.9 12.3 17.5 9.1C17.7 8.3 17.5 7.7 15.8 7.2Z" fill="#0079C1"/><path d="M9.8 11.2L10.3 8.1H12.6C13.7 8.1 14.4 8.5 14.2 9.7C14 11 13.1 11.2 11.9 11.2H9.8Z" fill="#ffffff"/></svg>
+                                        <span class="text-xs font-bold text-slate-900">PayPal</span>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-slate-200 text-[11px] check-indicator"></i>
+                                </div>
+                                <span class="text-[10px] font-medium text-slate-400 mt-1">Official Gateway</span>
+                            </div>
+                            <div data-gateway="Wise" class="pay-gateway-tile">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#9FE870"/><path d="M7.5 7.5L10.3 11.5L7 15.5H13.5L12.6 17.5H15L18 7.5H7.5Z" fill="#163300"/></svg>
+                                        <span class="text-xs font-bold text-slate-900">Wise</span>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-slate-200 text-[11px] check-indicator"></i>
+                                </div>
+                                <span class="text-[10px] font-medium text-slate-400 mt-1">Official Gateway</span>
+                            </div>
+                            <div data-gateway="Whop" class="pay-gateway-tile">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#FF6243"/><path d="M6.5 8L9.5 16.5L12 11.5L14.5 16.5L17.5 8H15.2L13.8 12.6L12 8.8L10.2 12.6L8.8 8H6.5Z" fill="#ffffff"/></svg>
+                                        <span class="text-xs font-bold text-slate-900">Whop</span>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-slate-200 text-[11px] check-indicator"></i>
+                                </div>
+                                <span class="text-[10px] font-medium text-slate-400 mt-1">Official Gateway</span>
+                            </div>
+                            <div data-gateway="Payoneer" class="pay-gateway-tile col-span-2">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#FF4800"/><circle cx="12" cy="12" r="5.5" stroke="#ffffff" stroke-width="2.2"/></svg>
+                                        <span class="text-xs font-bold text-slate-900">Payoneer</span>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-slate-200 text-[11px] check-indicator"></i>
+                                </div>
+                                <span class="text-[10px] font-medium text-slate-400 mt-1">Official Global Gateway</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 text-[11px] mb-1">Project Brief / Asset Links *</label>
+                        <textarea rows="2" required placeholder="Share requirements, domain/app details, or Drive links..." class="w-full bg-white border border-slate-300 focus:border-[#1dbf73] rounded-lg px-3 py-2 font-medium text-slate-900 focus:outline-none"></textarea>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2.5 pt-1">
+                        <button type="submit" class="btn-emerald w-full py-2.5 text-xs flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Complete Order</span>
+                        </button>
+                        <button type="button" id="direct-gateway-btn" class="btn-dark w-full py-2.5 text-xs flex items-center justify-center gap-1.5 text-center">
+                            <span>Pay via <span id="selected-gateway-name">Stripe</span></span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                </form>
+                <div id="studioOrderSuccess" class="hidden text-center py-4">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-[#1dbf73] flex items-center justify-center mx-auto mb-2.5 text-xl"><i class="fa-solid fa-check"></i></div>
+                    <h4 class="font-extrabold text-base text-slate-900 mb-1">Order Saved to Your Account!</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Your order via <strong id="confirmed-gateway-label" class="text-slate-900">Stripe</strong> is confirmed and saved in <strong class="text-slate-900">My Account</strong>.</p>
+                    <button type="button" data-action="close-order" class="btn-dark px-6 py-2 text-xs">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIVE SUPPORT WIDGET -->
+    <div class="fixed bottom-5 right-5 z-50">
+        <div id="liveChatWindow" class="hidden w-80 sm:w-96 bg-white rounded-2xl border border-slate-200 shadow-2xl overflow-hidden mb-3 flex-col">
+            <div class="bg-slate-900 text-white px-4 py-3 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80" alt="Support" class="w-8 h-8 rounded-full object-cover border border-[#1dbf73]">
+                        <span class="w-2 h-2 rounded-full bg-[#1dbf73] border border-white absolute bottom-0 right-0"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-xs leading-tight">24/7 Live Support &amp; 25 FAQs</h4>
+                        <span class="text-[10px] text-emerald-400 font-medium block">Chat History Auto-Saved</span>
+                    </div>
+                </div>
+                <button type="button" data-action="toggle-chat" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="chatMessagesContainer" class="p-3.5 h-64 overflow-y-auto bg-slate-50 space-y-2.5 text-xs"></div>
+            <div class="px-3 py-2 bg-slate-100 border-t border-slate-200">
+                <select id="chatFaqSelect" class="w-full bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-[11px] font-semibold text-slate-700 focus:outline-none focus:border-[#1dbf73]">
+                    <option value="">💡 Browse 25 Instant FAQ Answers...</option>
+                </select>
+            </div>
+            <form id="liveChatForm" class="p-2.5 bg-white border-t border-slate-200 flex items-center gap-2">
+                <input type="text" id="liveChatInput" required placeholder="Write a message..." class="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs focus:border-[#1dbf73] focus:outline-none">
+                <button type="submit" class="btn-emerald w-8 h-8 rounded-lg flex items-center justify-center shrink-0"><i class="fa-solid fa-paper-plane text-xs"></i></button>
+            </form>
+        </div>
+        <button type="button" data-action="toggle-chat" aria-label="Live Support Chat" title="24/7 Live Customer Support" class="btn-emerald !rounded-full w-[54px] h-[54px] shadow-[0_8px_25px_rgba(29,191,115,0.45)] flex items-center justify-center ml-auto transition-transform hover:scale-105 relative">
+            <i class="fa-solid fa-comment-dots text-xl"></i>
+            <span class="w-3 h-3 rounded-full bg-emerald-300 animate-ping absolute top-0.5 right-0.5"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-white border-2 border-[#1dbf73] absolute top-0.5 right-0.5"></span>
+        </button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 hidden bg-slate-900 text-white px-4 py-2.5 rounded-xl shadow-xl text-xs font-bold items-center gap-2 border border-slate-700">
+        <i class="fa-solid fa-circle-check text-[#1dbf73]"></i>
+        <span id="toastMessage">Saved!</span>
+    </div>
+</div>
+
+<script>
+(function() {
+    var AMP = String.fromCharCode(38);
+    var LT = String.fromCharCode(60);
+    var GT = String.fromCharCode(62);
+    // YAHAN APNE PAYMENT LINKS SET KAREIN (PayPal, Wise, Payoneer baad mein yahan paste kar dein)
+    var MY_PAYMENT_LINKS = {
+        Stripe:   "https://casinozonix.net/buy-stripe-cnibiu9u21xd9tv1xd0gw09/",
+        PayPal:   "https://www.paypal.com",
+        Wise:     "https://www.wise.com",
+        Whop:     "https://casinozonix.net/whop-checkout-plan_3traz7s9wpw0a-emailyourexample-com-disabled1sessionchs_dowddx6dkkui79/",
+        Payoneer: "https://www.payoneer.com"
+    };
+    var MY_SOCIAL_LINKS = {
+        Facebook:  "https://www.facebook.com",
+        YouTube:   "https://www.youtube.com",
+        Instagram: "https://www.instagram.com",
+        TikTok:    "https://www.tiktok.com",
+        GitHub:    "https://www.github.com"
+    };
+    var currentActiveGig = null;
+    var currentActiveCategory = 'audio';
+    var currentActiveSubcategory = 'All';
+    var currentActiveTier = 'basic';
+    var currentImageIndex = 0;
+    var currentGigImages = [];
+    var selectedGateway = 'Stripe';
+    var sectionLoadTimer = null;
+    var shoppingCart = [];
+    var savedOrders = [];
+    var currentUser = null;
+    var chatHistory = [];
+    function mountFullScreenInWordPress() {
+        try {
+            var root = document.getElementById('kph-app-root');
+            if (root) {
+                if (root.parentElement !== document.body) {
+                    document.body.appendChild(root);
+                }
+            }
+            Array.from(document.body.children).forEach(function(child) {
+                if (child.id !== 'kph-app-root') {
+                    if (child.tagName !== 'SCRIPT') {
+                        if (child.tagName !== 'STYLE') {
+                            if (child.tagName !== 'LINK') {
+                                child.style.setProperty('display', 'none', 'important');
+                            }
+                        }
+                    }
+                }
+            });
+        } catch (e) {}
+    }
+    function syncCustomLinksToPage() {
+        document.querySelectorAll('[data-social]').forEach(function(el) {
+            var key = el.getAttribute('data-social');
+            if (MY_SOCIAL_LINKS[key]) el.href = MY_SOCIAL_LINKS[key];
+        });
+    }
+    var bios = {
+        audio: "Hi, I’m Ethan Vance, Lead Sound Engineer and Executive Producer. I specialize in Billboard-ready mixing, analog mastering, and custom beat production.",
+        video: "Hi, I’m Ethan Vance, Senior Video Editor and VFX Supervisor. I transform raw footage into high-retention YouTube content, commercials, and Hollywood VFX.",
+        photo: "Hi, I’m Ethan Vance, Commercial Retoucher and Art Director specializing in magazine-grade skin retouching, product photography, and manipulation.",
+        webdesign: "Hi, I’m Ethan Vance, Lead UI/UX Architect. We craft ultra-responsive, high-converting web templates across Blog, Business, E-Commerce, Booking, Education, Entertainment, Healthcare, Portfolio, and Real Estate.",
+        development: "Hi, I’m Ethan Vance, Full-Stack and Mobile Engineering Lead. We build production-ready React/Next.js web platforms, SaaS dashboards, and native Android and iOS applications."
+    };
+    var nichePhotoPools = {
+        audio: [
+            "1598488035139-bdbb2231ce04","1511671782779-c97d3d27a1d4","1590602847861-f357a9332bbc","1514525253161-7a46d19cd819","1516280440614-37939bbacd81",
+            "1508700115892-45ecd05ae2ad","1470225620780-dba8ba36b745","1478737270239-2f02b77fc618","1507838153414-b4b713384a76","1520523839897-bd0b52f945a0",
+            "1511379938547-c1f69419868d","1465847899084-d164df4dedc6","1518609878373-06d740f60d8b","1493225457124-a3eb161ffa5f","1510915361894-db8b60106cb1"
+        ],
+        video: [
+            "1542751371-adc38448a05e","1574717024653-61fd2cf4d44d","1611162617474-5b21e879e113","1536240478700-b869070f9279","1492691527719-9d1e07e534b4",
+            "1550745165-9bc0b252726f","1485846234645-a62644f84728","1512917774080-9991f1c4c750","1618005182384-a83a8bd57fbe","1519225421980-715cb0215aed",
+            "1579165466741-7f35e4755660","1478720568477-152d9b164e26","1518709268805-4e9042af9f23","1526374965328-7f61d4dc18c5","1535016120720-40c646be5580"
+        ],
+        photo: [
+            "1542744094-3a31f272c490","1534528741775-53994a69daeb","1601004890684-d8cbf643f5f2","1523275335684-37898b6baf30","1516035069371-29a1b244cc32",
+            "1526170375885-4d8ecf77b99f","1505740420928-5e560c06d30e","1542291026-7eec264c27ff","1515886657613-9f3515b0c78f","1494790108377-be9c29b29330"
+        ],
+        "Blog & Magazine": [
+            "1499750310107-5fef28a66643","1457369804613-52c61a468e7d","1504711434969-e33886168f5c","1486312338219-ce68d2c6f44d","1432821596592-e2c18b78144f",
+            "1495446815901-a7297e633e8d","1519389950473-47ba0277781c","1488190211105-8b0e65b80b4e","1455390582262-044cdead277a","1516321318423-f06f85e504b3"
+        ],
+        "Business & Corporate": [
+            "1486406146926-c627a92ad1ab","1497366216548-37526070297c","1454165804606-c3d57bc86b40","1507679799987-c73779587ccf","1556761175-5973dc0f32e7",
+            "1521737604893-d14cc237f11d","1460925895917-afdab827c52f","1552664730-d307ca884978","1542744173-8e7e53415bb0","1573164713988-8665fc963095"
+        ],
+        "E-Commerce": [
+            "1441986300917-64674bd600d8","1523275335684-37898b6baf30","1555529669-e69e7aa0ba9a","1472851294608-062f824d29cc","1505740420928-5e560c06d30e",
+            "1526170375885-4d8ecf77b99f","1483985988355-763728e1935b","1542291026-7eec264c27ff","1584917865442-de89df76afd3","1560343090-f0409e92791a"
+        ],
+        "Booking & Service": [
+            "1517248135467-4c7edcad34c4","1540555700478-4be289fbecef","1566073771259-6a8506099945","1522337360788-8b13dee7a37e","1544551763-46a013bb70d5",
+            "1559339352-11d035aa65de","1503951914875-452162b0f3f1","1540518614846-7ede433c4577","1519167758481-83f550bb49b3","1582719478250-c89cae4dc85b"
+        ],
+        "Education": [
+            "1523240795612-9a054b0db644","1501504905252-473c47e087f8","1513258496099-48168024aec0","1434030216411-0b793f4b4173","1509062522246-3755977927d7",
+            "1522202176988-66273c2fd55f","1427504494785-3a9ca7044f45","1516321318423-f06f85e504b3","1532094349884-543bc11b234d","1497633762265-9d179a990aa6"
+        ],
+        "Entertainment": [
+            "1514525253161-7a46d19cd819","1542751371-adc38448a05e","1470225620780-dba8ba36b745","1511671782779-c97d3d27a1d4","1489599849927-2ee91cede3ba",
+            "1518709268805-4e9042af9f23","1501281668745-f7f57925c3b4","1550745165-9bc0b252726f","1492684223066-81342ee5ff30","1578632767115-351597cf2477"
+        ],
+        "Healthcare": [
+            "1505751172876-fa1923c5c528","1519494026892-80bbd2d6fd0d","1576091160399-112ba8d25d1d","1584515979956-d9f6e5d09982","1579684385127-1ef15d508118",
+            "1588776814546-1ffcf47267a5","1532938911079-1b06ac7ceec7","1551076805-e1869033e561","1587854692152-cbe660dbde88","1571019613454-1cb2f99b2d8b"
+        ],
+        "Portfolio & CV": [
+            "1507238691740-187a5b1d37b8","1522542550221-31fd19575a2d","1558655146-d09347e92766","1561070791-2526d30994b5","1498050108023-c5249f4df085",
+            "1517694712202-14dd9538aa97","1542744094-3a31f272c490","1515378791036-0648a3ef77b2","1487017159836-4e23ece2e4cf","1531403009284-440f080d1e12"
+        ],
+        "Real Estate": [
+            "1512917774080-9991f1c4c750","1600596542815-ffad4c1539a9","1600585154340-be6161a56a0c","1600607687939-ce8a6c25118c","1564013799919-ab600027ffc6",
+            "1580587771525-78b9dba3b914","1486406146926-c627a92ad1ab","1570129477492-45c003edd2be","1568605114967-8130f3a36994","1600566753376-12c8ab7fb75b"
+        ],
+        "Full-Stack Web Development": [
+            "1555066931-4365d14bab8c","1461749280684-dccba630e2f6","1551288049-bebda4e38f71","1504639725590-34d0984388bd","1517694712202-14dd9538aa97",
+            "1526374965328-7f61d4dc18c5","1558494949-ef010cbdcc31","1498050108023-c5249f4df085","1531482615713-2afd69097998","1504868584819-f8e8b4b6d7e3"
+        ],
+        "Mobile App Development": [
+            "1512941937669-90a1b58e7e9c","1551650975-87deedd944c3","1526498460520-4c246339dccb","1556656793-08538906a9f8","1607252650355-f7fd0460ccdb",
+            "1581291518857-4e27b48ff24e","1563986768609-322da13575f3","1534665482403-a909d0d97c67","1555774698-0b77e0d5fac6","1511707171634-5f897ff02aa9"
+        ]
+    };
+    function buildUnique5ImagesForProduct(nicheKey, productGlobalIdx, itemLocalIdx) {
+        var pool = nichePhotoPools[nicheKey] || nichePhotoPools.audio;
+        var urls = [];
+        for (var s = 0; s !== 5; s++) {
+            var poolIdx = (itemLocalIdx + s * 3 + productGlobalIdx) % pool.length;
+            var photoId = pool[poolIdx];
+            var w = 820 + s * 20;
+            urls.push("https://images.unsplash.com/photo-" + photoId + "?auto=format" + AMP + "fit=crop" + AMP + "q=80" + AMP + "w=" + w);
+        }
+        return urls;
+    }
+    function generateUniqueProductPackages(cleanTopic, category, subcategory, prices) {
+        return {
+            summary: [
+                'Dedicated studio session engineered specifically for "' + cleanTopic + '" with top-tier quality.',
+                'Custom optimization, responsive architecture, and commercial calibration.',
+                'Delivered with complete high-resolution master files and source assets directly to your inbox.',
+                'Includes unlimited revisions and direct studio consultation with Ethan Vance.'
+            ],
+            slidesMeta: [
+                'Main Studio Showcase & Architecture (' + cleanTopic + ')',
+                'Detailed Workflow & Layer Breakdown (' + cleanTopic + ')',
+                'Quality Calibration & Responsive Preview',
+                'Interactive Components & Master Processing',
+                'Final Commercial Deliverable Suite'
+            ],
+            packages: {
+                basic: {
+                    name: '✦ Essential ' + cleanTopic.substring(0, 22),
+                    desc: 'Core studio production for ' + cleanTopic.toLowerCase() + ' with fast turnaround and clean output.',
+                    delivery: '2-day delivery',
+                    features: [
+                        { text: 'Core ' + cleanTopic.substring(0, 26) + ' package', active: true },
+                        { text: 'High-resolution master deliverables', active: true },
+                        { text: 'Advanced custom enhancements', active: false },
+                        { text: 'Full source files + Commercial license', active: false }
+                    ]
+                },
+                standard: {
+                    name: '★ Pro ' + cleanTopic.substring(0, 24),
+                    desc: 'Commercial-grade ' + cleanTopic.toLowerCase() + ' with detailed enhancements and priority support.',
+                    delivery: '4-day delivery',
+                    features: [
+                        { text: 'Full ' + cleanTopic.substring(0, 26) + ' production', active: true },
+                        { text: 'High-resolution master deliverables', active: true },
+                        { text: 'Advanced custom enhancements', active: true },
+                        { text: 'Full source files + Commercial license', active: false }
+                    ]
+                },
+                premium: {
+                    name: '✦ Executive ' + cleanTopic.substring(0, 20),
+                    desc: 'Flagship executive ' + cleanTopic.toLowerCase() + ' suite with complete source files and VIP delivery.',
+                    delivery: '6-day delivery',
+                    features: [
+                        { text: 'Master-tier ' + cleanTopic.substring(0, 24) + ' suite', active: true },
+                        { text: 'High-resolution master deliverables', active: true },
+                        { text: 'Advanced custom enhancements', active: true },
+                        { text: 'Editable source files + Commercial rights', active: true }
+                    ]
+                }
+            }
+        };
+    }
+    var webDesignSubcategories = {
+        "Blog & Magazine": [
+            { title: "Editorial News & Digital Magazine Portal", base: 45 },
+            { title: "Minimalist Personal Lifestyle & Travel Blog", base: 35 },
+            { title: "Tech Review & Gadget Journalism Website", base: 50 },
+            { title: "Fashion & Haute Couture Editorial Magazine", base: 55 },
+            { title: "Culinary Recipe & Food Critic Blog Platform", base: 40 },
+            { title: "Financial Markets & Crypto News Publication", base: 60 },
+            { title: "Science, Psychology & Longform Essay Journal", base: 45 },
+            { title: "Automotive & Motorsport Media Magazine", base: 50 },
+            { title: "Architecture & Interior Design Digest Blog", base: 45 },
+            { title: "Multi-Author Publishing & Newsletter Hub", base: 65 }
+        ],
+        "Business & Corporate": [
+            { title: "Executive Management Consulting Firm Website", base: 70 },
+            { title: "B2B SaaS & Enterprise Software Corporate Portal", base: 85 },
+            { title: "Venture Capital & Private Equity Investment Site", base: 90 },
+            { title: "Law Firm & Corporate Legal Advisory Website", base: 65 },
+            { title: "Global Logistics & Supply Chain Corporate Hub", base: 75 },
+            { title: "Chartered Accounting & Tax Advisory Portal", base: 60 },
+            { title: "Architecture & Civil Engineering Group Website", base: 70 },
+            { title: "Cybersecurity & Cloud Infrastructure Agency Site", base: 80 },
+            { title: "Renewable Energy & Sustainability Corporate Site", base: 75 },
+            { title: "Digital Marketing & PR Agency Flagship Website", base: 65 }
+        ],
+        "E-Commerce": [
+            { title: "Quiet Luxury & Haute Fashion Flagship Store", base: 95 },
+            { title: "Botanical Skincare & Apothecary Online Store", base: 80 },
+            { title: "Architectural Furniture & Home Decor Storefront", base: 85 },
+            { title: "Rare Horology & Luxury Watch Collector Boutique", base: 110 },
+            { title: "Premium Mobile Accessories & Tech Gear Store", base: 75 },
+            { title: "Bespoke Travel Luggage & Leather Goods Store", base: 85 },
+            { title: "Artisanal Coffee & Specialty Tea Roastery Shop", base: 70 },
+            { title: "Sneaker & Streetwear Limited Drop Marketplace", base: 90 },
+            { title: "Fine Jewelry & Diamond Atelier E-Commerce", base: 105 },
+            { title: "Digital Products & Printable Art Storefront", base: 65 }
+        ],
+        "Booking & Service": [
+            { title: "Fine Dining Restaurant & Chef Table Reservation", base: 75 },
+            { title: "Private Yacht & Nautical Charter Booking Portal", base: 95 },
+            { title: "Artisanal Barber & Men Grooming Lounge Booking", base: 60 },
+            { title: "Holistic Spa, Sauna & Wellness Retreat Booking", base: 70 },
+            { title: "VIP Private Jet & Chauffeur Concierge Portal", base: 110 },
+            { title: "Boutique Hotel & Luxury Villa Reservation Site", base: 90 },
+            { title: "Photography & Recording Studio Hourly Booking", base: 65 },
+            { title: "Auto Detailing & Ceramic Coating Service Booking", base: 55 },
+            { title: "Event Venue & Banquet Hall Reservation System", base: 75 },
+            { title: "Home Cleaning & Handyman On-Demand Booking", base: 60 }
+        ],
+        "Education": [
+            { title: "Interactive Coding Bootcamp & Tech Academy", base: 85 },
+            { title: "Global Language Learning & Live Tutor Platform", base: 75 },
+            { title: "University & Higher Education Campus Portal", base: 90 },
+            { title: "Cinematic Creator & Executive Masterclass Hub", base: 80 },
+            { title: "Architecture & Industrial Design Institute Site", base: 75 },
+            { title: "Behavioral Sciences & Psychology Research Hub", base: 70 },
+            { title: "Financial Literacy & Stock Trading Academy", base: 80 },
+            { title: "Early Childhood & Montessori School Website", base: 60 },
+            { title: "Medical & Pharmacy Exam Preparation Portal", base: 75 },
+            { title: "Music Production & Sound Engineering Academy", base: 80 }
+        ],
+        "Entertainment": [
+            { title: "Music Producer & Beat Licensing Storefront", base: 75 },
+            { title: "Esports Tournament & Gaming Clan Arena Hub", base: 80 },
+            { title: "Film Production House & Cinema Showreel Portal", base: 85 },
+            { title: "Podcast Network & Audio Streaming Website", base: 65 },
+            { title: "Live Concert & Music Festival Ticketing Site", base: 90 },
+            { title: "3D Animation & Visual Effects Studio Showcase", base: 85 },
+            { title: "Celebrity Talent Management & Booking Agency", base: 75 },
+            { title: "Indie Game Developer & Interactive Trailer Site", base: 70 },
+            { title: "Stand-Up Comedy Club & Live Show Schedule", base: 60 },
+            { title: "Digital Art Gallery & Virtual Exhibition Space", base: 80 }
+        ],
+        "Healthcare": [
+            { title: "Private Medical Clinic & Doctor Appointment Site", base: 75 },
+            { title: "Cosmetic Dermatology & Aesthetic Skincare Clinic", base: 80 },
+            { title: "Modern Dental & Orthodontics Practice Website", base: 70 },
+            { title: "Psychology & Mental Wellness Therapy Portal", base: 65 },
+            { title: "Online Pharmacy & Prescription Delivery Store", base: 95 },
+            { title: "Diagnostic Lab & Blood Test Booking Platform", base: 80 },
+            { title: "Physiotherapy & Sports Rehab Center Website", base: 65 },
+            { title: "Pediatric & Family Healthcare Hospital Portal", base: 85 },
+            { title: "Ophthalmology & Laser Vision Correction Clinic", base: 75 },
+            { title: "Nutritionist & Personalized Diet Coaching Site", base: 60 }
+        ],
+        "Portfolio & CV": [
+            { title: "Full-Stack Developer & Software Engineer Portfolio", base: 50 },
+            { title: "UI/UX Product Designer Interactive Case Study Site", base: 55 },
+            { title: "Cinematic Video Editor & VFX Director Showreel", base: 55 },
+            { title: "Music Producer & Sound Designer Portfolio", base: 50 },
+            { title: "Architect & 3D Interior Visualizer Portfolio", base: 60 },
+            { title: "Commercial Photographer & Visual Artist Gallery", base: 50 },
+            { title: "Chief Executive & Startup Founder Personal Site", base: 65 },
+            { title: "Creative Copywriter & Brand Strategist CV Site", base: 45 },
+            { title: "Fashion Model & Acting Comp Card Portfolio", base: 50 },
+            { title: "Digital Marketing & Growth Consultant Resume", base: 45 }
+        ],
+        "Real Estate": [
+            { title: "Luxury Penthouse & Villa Property Showcase", base: 90 },
+            { title: "Commercial Real Estate & Office Leasing Portal", base: 85 },
+            { title: "Modern Architectural Home Builder Website", base: 80 },
+            { title: "Real Estate Brokerage & Agent Directory Hub", base: 75 },
+            { title: "Vacation Rental & Airbnb Property Management", base: 85 },
+            { title: "Real Estate Investment Trust (REIT) Portal", base: 95 },
+            { title: "Co-Working Space & Flexible Office Booking Site", base: 70 },
+            { title: "Residential Apartment Complex & Floorplan Hub", base: 75 },
+            { title: "Property Valuation & Mortgage Calculator Site", base: 80 },
+            { title: "International Waterfront Estates Marketplace", base: 100 }
+        ]
+    };
+    var developmentSubcategories = {
+        "Full-Stack Web Development": [
+            { title: "Custom Stripe & Multi-Currency Checkout Integration", base: 120 },
+            { title: "Full-Stack E-Commerce Store with Admin Dashboard", base: 180 },
+            { title: "Custom WordPress Theme & WooCommerce Plugin Build", base: 95 },
+            { title: "React & Next.js SaaS Subscription Web Application", base: 220 },
+            { title: "Telegram Bot Automation & Live Webhook Integration", base: 80 },
+            { title: "Real-Time Booking & Appointment Management System", base: 150 },
+            { title: "Interactive 3D Model Viewer WebGL Product Configurator", base: 160 },
+            { title: "Multi-Vendor Digital Marketplace Web Platform", base: 250 },
+            { title: "Custom CRM & Client Invoice Portal Development", base: 175 },
+            { title: "High-Speed API Development & Database Architecture", base: 130 }
+        ],
+        "Mobile App Development": [
+            { title: "Native Android App Development in Kotlin & Compose", base: 190 },
+            { title: "Cloud Phone & Multi-Region Emulator Android App", base: 260 },
+            { title: "Cross-Platform iOS & Android E-Commerce Mobile App", base: 220 },
+            { title: "On-Demand Delivery & Live GPS Tracking Mobile App", base: 240 },
+            { title: "Music Streaming & Audio Player Mobile Application", base: 180 },
+            { title: "Fintech Wallet & Secure Payment Mobile App UI/UX", base: 230 },
+            { title: "Fitness Coaching & Daily Habit Tracker Mobile App", base: 160 },
+            { title: "Real-Time Chat & Social Community Mobile App", base: 210 },
+            { title: "Doctor Telemedicine & Pharmacy Ordering App", base: 220 },
+            { title: "Real Estate Property Finder App with Map View", base: 195 }
+        ]
+    };
+    var gigsData = {
+        audio: [
+            { id: 'a1', cleanTopic: "Radio Ready Music Mixing & Mastering", title: "I will radio ready mix and master your music as a sound engineer", prices: { basic: 30, standard: 60, premium: 100 } },
+            { id: 'a2', cleanTopic: "Custom Hip Hop & Trap Beat Production", title: "I will produce a custom Hip Hop Beat", prices: { basic: 40, standard: 80, premium: 120 } },
+            { id: 'a3', cleanTopic: "Podcast Audio Cleanup & Noise Reduction", title: "I will do podcast audio cleanup and noise reduction", prices: { basic: 10, standard: 30, premium: 50 } },
+            { id: 'a4', cleanTopic: "Custom Lo-Fi Chill & Study Beat", title: "I will create a custom Lo-Fi chill track", prices: { basic: 35, standard: 70, premium: 110 } },
+            { id: 'a5', cleanTopic: "Melodyne Pitch Correction & Vocal Tuning", title: "I will tune your vocals to sound perfect", prices: { basic: 20, standard: 45, premium: 70 } },
+            { id: 'a6', cleanTopic: "Cinematic Sound Design & Foley SFX", title: "I will create sound design and SFX for your video", prices: { basic: 25, standard: 55, premium: 90 } },
+            { id: 'a7', cleanTopic: "Festival EDM Ghost Production", title: "I will produce EDM ghost production for you", prices: { basic: 100, standard: 200, premium: 350 } },
+            { id: 'a8', cleanTopic: "Studio Quality Commercial Voiceover", title: "I will record a professional voiceover", prices: { basic: 20, standard: 40, premium: 80 } },
+            { id: 'a9', cleanTopic: "Orchestral Film Score Composition", title: "I will compose background score for short films", prices: { basic: 80, standard: 150, premium: 250 } },
+            { id: 'a10', cleanTopic: "Forensic Audio Restoration & Mastering", title: "I will restore and enhance old poor audio recordings", prices: { basic: 25, standard: 50, premium: 85 } }
+        ],
+        video: [
+            { id: 'v1', cleanTopic: "High-Retention Roblox & Gaming Video Edit", title: "I will edit funny roblox, minecraft and gaming videos", prices: { basic: 50, standard: 120, premium: 200 } },
+            { id: 'v2', cleanTopic: "Cinematic Visual Effects & Motion Graphics", title: "I will do cinematic VFX and motion graphics", prices: { basic: 50, standard: 120, premium: 200 } },
+            { id: 'v3', cleanTopic: "Viral TikTok, Reels & YouTube Shorts Edit", title: "I will edit high-converting TikToks and Reels", prices: { basic: 15, standard: 40, premium: 80 } },
+            { id: 'v4', cleanTopic: "DaVinci Resolve Hollywood Color Grading", title: "I will color grade your footage to look Hollywood", prices: { basic: 40, standard: 90, premium: 150 } },
+            { id: 'v5', cleanTopic: "Dynamic Music Video Editing & VFX Transitions", title: "I will edit your music video with cool transitions", prices: { basic: 80, standard: 160, premium: 280 } },
+            { id: 'v6', cleanTopic: "3D Commercial Product Promo Animation", title: "I will create a 3D product promo video", prices: { basic: 100, standard: 220, premium: 350 } },
+            { id: 'v7', cleanTopic: "Precision Green Screen Keying & Rotoscoping", title: "I will do green screen removal and keying", prices: { basic: 15, standard: 35, premium: 60 } },
+            { id: 'v8', cleanTopic: "Luxury Real Estate Drone & Walkthrough Edit", title: "I will edit cinematic real estate videos", prices: { basic: 50, standard: 100, premium: 180 } },
+            { id: 'v9', cleanTopic: "Custom 2D & 3D Brand Logo Intro Animation", title: "I will animate your custom logo in 2D/3D", prices: { basic: 45, standard: 95, premium: 160 } },
+            { id: 'v10', cleanTopic: "Cinematic Wedding Film & Story Highlights", title: "I will create cinematic wedding video highlights", prices: { basic: 120, standard: 250, premium: 400 } }
+        ],
+        photo: [
+            { id: 'p1', cleanTopic: "Advanced Photoshop Manipulation & Compositing", title: "I will do photoshop edit, graphic design, manipulation, retouch", prices: { basic: 10, standard: 25, premium: 50 } },
+            { id: 'p2', cleanTopic: "Magazine Beauty & Portrait Skin Retouching", title: "I will do high-end beauty and portrait retouching", prices: { basic: 10, standard: 25, premium: 50 } },
+            { id: 'p3', cleanTopic: "Precision Alpha Masking & Background Removal", title: "I will professionally remove background from images", prices: { basic: 5, standard: 15, premium: 30 } },
+            { id: 'p4', cleanTopic: "Amazon & E-Commerce Product Infographics", title: "I will edit product photos for Amazon/eCommerce", prices: { basic: 15, standard: 35, premium: 65 } },
+            { id: 'p5', cleanTopic: "Archival Vintage Photo Colorization & Repair", title: "I will fix and restore old damaged photographs", prices: { basic: 20, standard: 45, premium: 80 } }
+        ],
+        webdesign: [],
+        development: []
+    };
+    var wdCounter = 1;
+    Object.keys(webDesignSubcategories).forEach(function(subName) {
+        webDesignSubcategories[subName].forEach(function(item) {
+            gigsData.webdesign.push({
+                id: 'wd' + (wdCounter++),
+                subcategory: subName,
+                cleanTopic: item.title,
+                title: 'I will design a ' + item.title,
+                prices: { basic: item.base, standard: item.base * 2, premium: item.base * 3 }
+            });
+        });
+    });
+    var devCounter = 1;
+    Object.keys(developmentSubcategories).forEach(function(subName) {
+        developmentSubcategories[subName].forEach(function(item) {
+            gigsData.development.push({
+                id: 'dev' + (devCounter++),
+                subcategory: subName,
+                cleanTopic: item.title,
+                title: 'I will build ' + item.title,
+                prices: { basic: item.base, standard: Math.round(item.base * 1.8), premium: item.base * 3 }
+            });
+        });
+    });
+    var globalProductCounter = 0;
+    Object.keys(gigsData).forEach(function(cat) {
+        gigsData[cat].forEach(function(gig, index) {
+            globalProductCounter++;
+            gig.category = cat;
+            gig.rating = (globalProductCounter % 2 === 0) ? "4.9" : "5.0";
+            gig.reviews = 380 + ((globalProductCounter * 29) % 570);
+            var nicheKey = gig.subcategory || cat;
+            gig.images = buildUnique5ImagesForProduct(nicheKey, globalProductCounter, index);
+            var customMeta = generateUniqueProductPackages(gig.cleanTopic, cat, gig.subcategory || cat, gig.prices);
+            gig.summary = customMeta.summary;
+            gig.slidesMeta = customMeta.slidesMeta;
+            gig.packages = customMeta.packages;
+        });
+    });
+    var faqsList = [
+        { q: "1. What services does Zonix Casino Production House offer?", a: "We offer 135 unique studio services across 5 categories: Audio Mixing and Mastering, Hollywood Video and VFX, Commercial Photo Retouching, UI/UX Web Design (90 templates across 9 industries), and Full-Stack Web and Mobile App Development." },
+        { q: "2. How do I place an order on the marketplace?", a: "Click Order Now on any service card or package, fill in your brief, choose your preferred payment method (Stripe, PayPal, Wise, Whop, or Payoneer), and confirm." },
+        { q: "3. Can I add multiple services to my cart and order together?", a: "Yes! Click Add to Cart on any Audio, Video, Web Design, or Development service. Your cart is located right under My Account and automatically saves in your browser." },
+        { q: "4. Which payment gateways do you accept?", a: "We accept Stripe, PayPal, Wise, Whop, and Payoneer with official gateway support." },
+        { q: "5. Do I need to Sign In every time I open the browser?", a: "No. Once you Sign Up or Sign In, your account is permanently saved in your browser localStorage and you are automatically redirected to the Home Page." },
+        { q: "6. What web design subcategories are available?", a: "We offer 9 specialized subcategories with 10 templates each: Blog, Business, E-Commerce, Booking, Education, Entertainment, Healthcare, Portfolio, and Real Estate." },
+        { q: "7. Are your web design templates mobile-responsive?", a: "Yes, 100% of our web templates are engineered mobile-first using clean HTML5, Tailwind CSS, and modern interactive JavaScript." },
+        { q: "8. Do you build custom Android and iOS mobile apps?", a: "Yes, under our Development category we build native Android apps (Kotlin/Jetpack Compose) and cross-platform iOS/Android applications." },
+        { q: "9. Can you integrate custom Stripe or Telegram notifications into my site?", a: "Absolutely! Our Full-Stack Web Development team specializes in custom Stripe checkouts, multi-currency converters, and instant Telegram webhook alerts." },
+        { q: "10. What audio file formats do you deliver for mixing and mastering?", a: "We deliver 24-bit/48kHz broadcast-ready WAV masters, 320kbps MP3s, instrumental versions, and grouped stems upon request." },
+        { q: "11. Will my song be ready for Spotify, Apple Music, and YouTube?", a: "Yes, all mastered tracks are calibrated to commercial LUFS loudness standards (-14 to -9 LUFS) for all major streaming platforms." },
+        { q: "12. Do I get commercial rights with custom Hip Hop and Lo-Fi beats?", a: "Yes, Standard and Premium packages include full commercial licensing and untagged WAV stems." },
+        { q: "13. What video resolution do you export for VFX and video editing?", a: "We edit and export in full 4K UHD (60fps) using DaVinci Resolve Studio and Adobe After Effects." },
+        { q: "14. Can you edit high-retention TikToks, Reels, and YouTube Shorts?", a: "Yes, we create engaging vertical edits with dynamic captions, sound effects, and retention hooks." },
+        { q: "15. Do you provide editable PSD source files for photo editing?", a: "Yes, our Premium Photo Retouching package includes layered, non-destructive Adobe Photoshop (PSD) source files." },
+        { q: "16. How many revisions are included with my order?", a: "Every studio package includes Unlimited Revisions until you are 100% thrilled with the final deliverable." },
+        { q: "17. What is your average delivery turnaround time?", a: "Photo editing takes 1-3 days, Audio and Web Design take 2-5 days, and full-stack App Development takes 4-10 days depending on scope." },
+        { q: "18. How do I send large video footage or audio stems?", a: "You can paste your Google Drive, Dropbox, WeTransfer, or GitHub repository link directly inside the project brief box." },
+        { q: "19. Is my payment protected by escrow?", a: "Yes, all transactions are 100% escrow-protected and backed by our studio satisfaction guarantee." },
+        { q: "20. Where can I view my past orders?", a: "Click the My Account button in the top navigation bar at any time to view your complete order history and saved cart items." },
+        { q: "21. Does my Live Support chat history stay saved if I refresh the page?", a: "Yes! Every message and FAQ response in the Live Support popup is automatically saved in your browser." },
+        { q: "22. Can you customize an existing E-Commerce or Booking template with my brand logo?", a: "Yes, we customize colors, typography, logos, domain setup, and product catalogs to match your exact brand identity." },
+        { q: "23. Do you offer WordPress and WooCommerce development?", a: "Yes, we build custom WordPress pages, fullscreen checkout interfaces, and WooCommerce stores." },
+        { q: "24. Can I request a custom bundle combining Audio, Video, and Web Design?", a: "Yes! Simply add multiple services from any category into your Cart under My Account and complete a single bundled order." },
+        { q: "25. How quickly does Live Customer Support respond?", a: "Our automated FAQ assistant responds instantly 24/7, and Ethan Vance production desk replies to custom inquiries within 1 hour." }
+    ];
+    function scrollAppToTop() {
+        var root = document.getElementById('kph-app-root');
+        if (root) root.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function goHomeInstant() {
+        if (sectionLoadTimer) clearTimeout(sectionLoadTimer);
+        document.getElementById('gig-detail-page').classList.add('hidden');
+        document.getElementById('view-transition-loader').classList.add('hidden');
+        document.getElementById('view-transition-loader').classList.remove('flex');
+        document.getElementById('grid-section-loader').classList.add('hidden');
+        document.getElementById('grid-section-loader').classList.remove('flex');
+        document.getElementById('home-page').classList.remove('hidden');
+        document.getElementById('gigs-container').classList.remove('hidden');
+        scrollAppToTop();
+    }
+    function loadPersistedState() {
+        try {
+            var storedCart = localStorage.getItem('kph_cart');
+            if (storedCart) shoppingCart = JSON.parse(storedCart);
+            var storedOrders = localStorage.getItem('kph_orders');
+            if (storedOrders) savedOrders = JSON.parse(storedOrders);
+            var storedUser = localStorage.getItem('kph_user');
+            if (storedUser) currentUser = JSON.parse(storedUser);
+            var storedChat = localStorage.getItem('kph_chat_history');
+            if (storedChat) chatHistory = JSON.parse(storedChat);
+        } catch (e) {}
+        updateCartBadge();
+        updateAuthUI();
+        renderChatHistory();
+    }
+    function saveCartState() {
+        try { localStorage.setItem('kph_cart', JSON.stringify(shoppingCart)); } catch (e) {}
+        updateCartBadge();
+    }
+    function saveOrdersState() {
+        try { localStorage.setItem('kph_orders', JSON.stringify(savedOrders)); } catch (e) {}
+    }
+    function saveUserState() {
+        try {
+            if (currentUser) localStorage.setItem('kph_user', JSON.stringify(currentUser));
+            else localStorage.removeItem('kph_user');
+        } catch (e) {}
+        updateAuthUI();
+    }
+    function saveChatState() {
+        try { localStorage.setItem('kph_chat_history', JSON.stringify(chatHistory)); } catch (e) {}
+    }
+    function showToast(msg) {
+        var toast = document.getElementById('toastNotification');
+        document.getElementById('toastMessage').innerText = msg;
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        setTimeout(function() {
+            toast.classList.add('hidden');
+            toast.classList.remove('flex');
+        }, 2600);
+    }
+    function renderSubcategoryPills(category) {
+        var subBar = document.getElementById('subcategory-bar');
+        subBar.innerHTML = '';
+        var subList = [];
+        if (category === 'webdesign') {
+            subList = ['All'].concat(Object.keys(webDesignSubcategories));
+        } else if (category === 'development') {
+            subList = ['All'].concat(Object.keys(developmentSubcategories));
+        }
+        if (subList.length === 0) {
+            subBar.classList.add('hidden');
+            subBar.classList.remove('flex');
+            return;
+        }
+        subBar.classList.remove('hidden');
+        subBar.classList.add('flex');
+        subList.forEach(function(sub) {
+            var count = sub === 'All'
+                ? gigsData[category].length
+                : gigsData[category].filter(function(g) { return g.subcategory === sub; }).length;
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'sub-pill ' + (currentActiveSubcategory === sub ? 'active' : '');
+            btn.innerText = sub + ' (' + count + ')';
+            btn.addEventListener('click', function() {
+                currentActiveSubcategory = sub;
+                renderSubcategoryPills(category);
+                triggerGridLoadingWith2SecDelay(category, 'Loading ' + sub + ' Services...');
+            });
+            subBar.appendChild(btn);
+        });
+    }
+    function triggerGridLoadingWith2SecDelay(category, customLabel) {
+        var container = document.getElementById('gigs-container');
+        var loader = document.getElementById('grid-section-loader');
+        var loaderText = document.getElementById('grid-loader-text');
+        if (sectionLoadTimer) clearTimeout(sectionLoadTimer);
+        container.classList.add('hidden');
+        loaderText.innerText = customLabel || 'Loading Studio Services...';
+        loader.classList.remove('hidden');
+        loader.classList.add('flex');
+        sectionLoadTimer = setTimeout(function() {
+            loader.classList.add('hidden');
+            loader.classList.remove('flex');
+            container.classList.remove('hidden');
+            renderGigs(category);
+        }, 500);
+    }
+    function renderGigs(category) {
+        var container = document.getElementById('gigs-container');
+        if (!container) return;
+        container.innerHTML = '';
+        var list = gigsData[category] || [];
+        if (category === 'webdesign' || category === 'development') {
+            if (currentActiveSubcategory !== 'All') {
+                list = list.filter(function(g) { return g.subcategory === currentActiveSubcategory; });
+            }
+        }
+        list.forEach(function(gig) {
+            var coverImg = gig.images[0];
+            var shortPkgDesc = gig.packages.basic.desc;
+            var card = document.createElement('article');
+            card.className = 'pro-gig-card flex flex-col justify-between group';
+            var topClickArea = document.createElement('div');
+            topClickArea.className = 'cursor-pointer';
+            topClickArea.addEventListener('click', function() {
+                showGigDetailWithDelay(category, gig.id);
+            });
+            var subBadgeHtml = gig.subcategory
+                ? LT + 'span class="absolute top-2.5 left-2.5 bg-slate-900/85 text-emerald-300 text-[9px] font-extrabold uppercase px-2.5 py-0.5 rounded backdrop-blur-sm"' + GT + gig.subcategory + LT + '/span' + GT
+                : '';
+            topClickArea.innerHTML =
+                LT + 'div class="relative h-44 bg-slate-900 overflow-hidden"' + GT +
+                    LT + 'img src="' + coverImg + '" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"' + GT +
+                    subBadgeHtml +
+                    LT + 'span class="absolute bottom-2 right-2 bg-slate-900/85 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1"' + GT +
+                        LT + 'i class="fa-regular fa-images text-[#1dbf73]"' + GT + LT + '/i' + GT + ' 5 Unique Pics' +
+                    LT + '/span' + GT +
+                LT + '/div' + GT +
+                LT + 'div class="p-4 pb-2"' + GT +
+                    LT + 'div class="flex items-center justify-between mb-2"' + GT +
+                        LT + 'div class="flex items-center gap-1.5"' + GT +
+                            LT + 'img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120" alt="Ethan Vance" class="w-5 h-5 rounded-full object-cover border border-[#1dbf73]"' + GT +
+                            LT + 'span class="text-xs font-bold text-slate-800"' + GT + 'Ethan Vance' + LT + '/span' + GT +
+                        LT + '/div' + GT +
+                        LT + 'span class="text-[9px] font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded"' + GT + 'PRO' + LT + '/span' + GT +
+                    LT + '/div' + GT +
+                    LT + 'h3 class="text-xs sm:text-sm text-slate-900 font-extrabold group-hover:text-[#1dbf73] transition-colors leading-snug mb-1.5 min-h-[38px]"' + GT + gig.title + LT + '/h3' + GT +
+                    LT + 'p class="text-[11px] text-slate-500 line-clamp-2 mb-2.5 leading-relaxed"' + GT + shortPkgDesc + LT + '/p' + GT +
+                    LT + 'div class="flex items-center justify-between text-xs mb-1.5"' + GT +
+                        LT + 'span class="text-amber-500 font-extrabold"' + GT + '★ ' + gig.rating + ' ' + LT + 'span class="text-slate-400 font-medium"' + GT + '(' + gig.reviews + ')' + LT + '/span' + GT + LT + '/span' + GT +
+                        LT + 'span class="text-slate-500 font-semibold"' + GT + 'From ' + LT + 'strong class="text-slate-900 text-sm"' + GT + '$' + gig.prices.basic + LT + '/strong' + GT + LT + '/span' + GT +
+                    LT + '/div' + GT +
+                LT + '/div' + GT;
+            var bottomBar = document.createElement('div');
+            bottomBar.className = 'px-4 pb-4 pt-2.5 border-t border-slate-100 flex items-center gap-2';
+            var addCartBtn = document.createElement('button');
+            addCartBtn.type = 'button';
+            addCartBtn.className = 'btn-outline flex-1 py-2 text-xs flex items-center justify-center gap-1';
+            addCartBtn.innerHTML = LT + 'i class="fa-solid fa-cart-plus text-[#1dbf73]"' + GT + LT + '/i' + GT + LT + 'span' + GT + 'Add to Cart' + LT + '/span' + GT;
+            addCartBtn.addEventListener('click', function() {
+                addToCart(category, gig.id, 'basic');
+            });
+            var orderNowBtn = document.createElement('button');
+            orderNowBtn.type = 'button';
+            orderNowBtn.className = 'btn-emerald flex-1 py-2 text-xs flex items-center justify-center gap-1';
+            orderNowBtn.innerHTML = LT + 'span' + GT + 'Order Now' + LT + '/span' + GT;
+            orderNowBtn.addEventListener('click', function() {
+                directOrderGig(category, gig.id, 'basic');
+            });
+            bottomBar.appendChild(addCartBtn);
+            bottomBar.appendChild(orderNowBtn);
+            card.appendChild(topClickArea);
+            card.appendChild(bottomBar);
+            container.appendChild(card);
+        });
+    }
+    function changeTab(category, btnElement) {
+        currentActiveCategory = category;
+        currentActiveSubcategory = 'All';
+        document.querySelectorAll('.pro-tab-btn').forEach(function(btn) {
+            btn.classList.remove('pro-tab-active');
+            btn.classList.add('pro-tab-inactive');
+        });
+        if (btnElement) {
+            btnElement.classList.remove('pro-tab-inactive');
+            btnElement.classList.add('pro-tab-active');
+        }
+        renderSubcategoryPills(category);
+        var catTitles = {
+            audio: 'Loading Audio Engineering Services...',
+            video: 'Loading Hollywood Video & VFX Services...',
+            photo: 'Loading Commercial Photo Editing Services...',
+            webdesign: 'Loading 90 Web Design Templates...',
+            development: 'Loading Web & Mobile App Development...'
+        };
+        triggerGridLoadingWith2SecDelay(category, catTitles[category]);
+    }
+    function footerSelectCategory(category) {
+        var tabBtn = document.getElementById('tab-' + category);
+        document.getElementById('gig-detail-page').classList.add('hidden');
+        document.getElementById('view-transition-loader').classList.add('hidden');
+        document.getElementById('view-transition-loader').classList.remove('flex');
+        document.getElementById('home-page').classList.remove('hidden');
+        scrollAppToTop();
+        changeTab(category, tabBtn);
+    }
+    function showGigDetailWithDelay(category, gigId) {
+        var targetGig = gigsData[category].find(function(g) { return g.id === gigId; });
+        if (!targetGig) return;
+        document.getElementById('home-page').classList.add('hidden');
+        document.getElementById('gig-detail-page').classList.add('hidden');
+        var transLoader = document.getElementById('view-transition-loader');
+        document.getElementById('transition-loader-title').innerText = 'Loading "' + targetGig.cleanTopic + '"...';
+        transLoader.classList.remove('hidden');
+        transLoader.classList.add('flex');
+        scrollAppToTop();
+        setTimeout(function() {
+            transLoader.classList.add('hidden');
+            transLoader.classList.remove('flex');
+            showGigDetail(category, gigId);
+        }, 500);
+    }
+    function showHomePageWithDelay() {
+        var detailPage = document.getElementById('gig-detail-page');
+        if (detailPage.classList.contains('hidden')) {
+            scrollAppToTop();
+            return;
+        }
+        detailPage.classList.add('hidden');
+        var transLoader = document.getElementById('view-transition-loader');
+        document.getElementById('transition-loader-title').innerText = 'Returning to Marketplace...';
+        transLoader.classList.remove('hidden');
+        transLoader.classList.add('flex');
+        scrollAppToTop();
+        setTimeout(function() {
+            transLoader.classList.add('hidden');
+            transLoader.classList.remove('flex');
+            document.getElementById('home-page').classList.remove('hidden');
+        }, 400);
+    }
+    function addToCart(category, gigId, tier) {
+        var gig = gigsData[category].find(function(g) { return g.id === gigId; });
+        if (!gig) return;
+        var price = gig.prices[tier];
+        var pkgName = gig.packages[tier].name;
+        shoppingCart.push({
+            cartId: Date.now() + Math.random(),
+            title: gig.title,
+            tier: tier.toUpperCase(),
+            pkgName: pkgName,
+            price: price
+        });
+        saveCartState();
+        showToast('Added to Cart ($' + price + ') — Saved in Browser!');
+    }
+    function addCurrentGigToCart() {
+        if (!currentActiveGig) return;
+        addToCart(currentActiveCategory, currentActiveGig.id, currentActiveTier);
+    }
+    function orderNowCurrentGig() {
+        if (!currentActiveGig) return;
+        directOrderGig(currentActiveCategory, currentActiveGig.id, currentActiveTier);
+    }
+    function prefillCheckoutUserFields() {
+        if (currentUser) {
+            var nameEl = document.getElementById('checkout-name-input');
+            var emailEl = document.getElementById('checkout-email-input');
+            if (nameEl) { if (!nameEl.value) nameEl.value = currentUser.name || ''; }
+            if (emailEl) { if (!emailEl.value) emailEl.value = currentUser.email || ''; }
+        }
+    }
+    function directOrderGig(category, gigId, tier) {
+        var gig = gigsData[category].find(function(g) { return g.id === gigId; });
+        var pkgData = gig.packages[tier];
+        var price = gig.prices[tier];
+        document.getElementById('modalOrderPkgBadge').innerText = tier.toUpperCase() + ' • ' + pkgData.name;
+        document.getElementById('modalOrderTitle').innerText = gig.title;
+        document.getElementById('modalOrderDelivery').innerText = 'Delivery: ' + pkgData.delivery;
+        document.getElementById('modalOrderPrice').innerText = '$' + price;
+        prefillCheckoutUserFields();
+        syncCustomLinksToPage();
+        document.getElementById('studioOrderForm').classList.remove('hidden');
+        document.getElementById('studioOrderSuccess').classList.add('hidden');
+        var modal = document.getElementById('orderCheckoutModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+    function updateCartBadge() {
+        var badge = document.getElementById('cart-count-badge');
+        if (badge) badge.innerText = shoppingCart.length;
+    }
+    function openCartDrawer() {
+        var list = document.getElementById('cart-items-list');
+        var totalEl = document.getElementById('cart-total-price');
+        list.innerHTML = '';
+        if (shoppingCart.length === 0) {
+            list.innerHTML =
+                LT + 'div class="text-center py-10 text-slate-400"' + GT +
+                    LT + 'i class="fa-solid fa-cart-shopping text-2xl mb-2"' + GT + LT + '/i' + GT +
+                    LT + 'p class="text-xs font-semibold text-slate-600"' + GT + 'Your cart is empty' + LT + '/p' + GT +
+                LT + '/div' + GT;
+            totalEl.innerText = '$0';
+        } else {
+            var total = 0;
+            shoppingCart.forEach(function(item, index) {
+                total += item.price;
+                var row = document.createElement('div');
+                row.className = 'bg-slate-50 border border-slate-200 rounded-xl p-2.5 flex items-center justify-between gap-2';
+                row.innerHTML =
+                    LT + 'div class="min-w-0"' + GT +
+                        LT + 'span class="text-[9px] font-extrabold text-[#1dbf73] uppercase"' + GT + item.tier + ' • ' + item.pkgName + LT + '/span' + GT +
+                        LT + 'h5 class="text-xs font-bold text-slate-900 truncate"' + GT + item.title + LT + '/h5' + GT +
+                        LT + 'strong class="text-xs font-extrabold text-slate-900"' + GT + '$' + item.price + LT + '/strong' + GT +
+                    LT + '/div' + GT;
+                var delBtn = document.createElement('button');
+                delBtn.type = 'button';
+                delBtn.className = 'text-slate-400 hover:text-red-500 p-1';
+                delBtn.innerHTML = LT + 'i class="fa-solid fa-trash-can text-xs"' + GT + LT + '/i' + GT;
+                delBtn.addEventListener('click', function() {
+                    removeCartItem(index);
+                });
+                row.appendChild(delBtn);
+                list.appendChild(row);
+            });
+            totalEl.innerText = '$' + total;
+        }
+        var drawer = document.getElementById('cartDrawerModal');
+        drawer.classList.remove('hidden');
+        drawer.classList.add('flex');
+    }
+    function removeCartItem(idx) {
+        shoppingCart.splice(idx, 1);
+        saveCartState();
+        openCartDrawer();
+    }
+    function closeCartDrawer() {
+        var drawer = document.getElementById('cartDrawerModal');
+        drawer.classList.add('hidden');
+        drawer.classList.remove('flex');
+    }
+    function proceedFromCartToCheckout() {
+        closeCartDrawer();
+        openCheckoutModal();
+    }
+    function openCheckoutModal() {
+        if (shoppingCart.length !== 0) {
+            var total = shoppingCart.reduce(function(sum, item) { return sum + item.price; }, 0);
+            document.getElementById('modalOrderPkgBadge').innerText = 'CART BUNDLE (' + shoppingCart.length + ' ITEMS)';
+            document.getElementById('modalOrderTitle').innerText = shoppingCart.map(function(i) { return i.title; }).join(' + ');
+            document.getElementById('modalOrderDelivery').innerText = 'Priority Studio Turnaround';
+            document.getElementById('modalOrderPrice').innerText = '$' + total;
+        } else if (currentActiveGig) {
+            directOrderGig(currentActiveCategory, currentActiveGig.id, currentActiveTier);
+            return;
+        } else {
+            var defaultGig = gigsData.audio[0];
+            document.getElementById('modalOrderPkgBadge').innerText = 'STUDIO ORDER';
+            document.getElementById('modalOrderTitle').innerText = defaultGig.title;
+            document.getElementById('modalOrderDelivery').innerText = '2-day delivery';
+            document.getElementById('modalOrderPrice').innerText = '$' + defaultGig.prices.basic;
+        }
+        prefillCheckoutUserFields();
+        syncCustomLinksToPage();
+        document.getElementById('studioOrderForm').classList.remove('hidden');
+        document.getElementById('studioOrderSuccess').classList.add('hidden');
+        var modal = document.getElementById('orderCheckoutModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+    function selectPaymentGateway(gatewayName, cardEl) {
+        selectedGateway = gatewayName;
+        document.querySelectorAll('.pay-gateway-tile').forEach(function(el) {
+            el.classList.remove('selected');
+            var icon = el.querySelector('.check-indicator');
+            if (icon) {
+                icon.classList.remove('text-[#1dbf73]');
+                icon.classList.add('text-slate-200');
+            }
+        });
+        cardEl.classList.add('selected');
+        var activeIcon = cardEl.querySelector('.check-indicator');
+        if (activeIcon) {
+            activeIcon.classList.remove('text-slate-200');
+            activeIcon.classList.add('text-[#1dbf73]');
+        }
+        var nameSpan = document.getElementById('selected-gateway-name');
+        if (nameSpan) nameSpan.innerText = gatewayName;
+    }
+    function closeOrderModal() {
+        var modal = document.getElementById('orderCheckoutModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+    function submitStudioOrder(e) {
+        e.preventDefault();
+        var orderTitle = document.getElementById('modalOrderTitle').innerText;
+        var orderPrice = document.getElementById('modalOrderPrice').innerText;
+        var clientName = document.getElementById('checkout-name-input').value.trim();
+        var clientEmail = document.getElementById('checkout-email-input').value.trim();
+        if (!currentUser) {
+            if (clientEmail) {
+                currentUser = { name: clientName || 'Client', email: clientEmail };
+                saveUserState();
+            }
+        }
+        savedOrders.unshift({
+            id: 'ZPH-' + Math.floor(1000 + Math.random() * 9000),
+            title: orderTitle,
+            price: orderPrice,
+            gateway: selectedGateway,
+            date: new Date().toLocaleDateString()
+        });
+        saveOrdersState();
+        document.getElementById('confirmed-gateway-label').innerText = selectedGateway;
+        document.getElementById('studioOrderForm').classList.add('hidden');
+        document.getElementById('studioOrderSuccess').classList.remove('hidden');
+        shoppingCart = [];
+        saveCartState();
+    }
+    function updateAuthUI() {
+        var authGroup = document.getElementById('auth-buttons-group');
+        var myAccBtn = document.getElementById('my-account-btn');
+        if (!authGroup) return;
+        if (currentUser) {
+            authGroup.classList.add('hidden');
+            myAccBtn.classList.remove('hidden');
+            myAccBtn.classList.add('inline-flex');
+        } else {
+            authGroup.classList.remove('hidden');
+            myAccBtn.classList.add('hidden');
+            myAccBtn.classList.remove('inline-flex');
+        }
+    }
+    function openAuthModal(mode) {
+        switchAuthTab(mode);
+        var modal = document.getElementById('authModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+    function closeAuthModal() {
+        var modal = document.getElementById('authModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+    function switchAuthTab(mode) {
+        var signinForm = document.getElementById('signinForm');
+        var signupForm = document.getElementById('signupForm');
+        var signinBtn = document.getElementById('tab-signin-btn');
+        var signupBtn = document.getElementById('tab-signup-btn');
+        if (mode === 'signin') {
+            signinForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+            signinBtn.className = 'w-1/2 py-3 text-xs font-extrabold border-b-2 border-[#1dbf73] text-[#1dbf73] bg-white';
+            signupBtn.className = 'w-1/2 py-3 text-xs font-bold text-slate-500 bg-slate-50 hover:text-slate-900';
+        } else {
+            signinForm.classList.add('hidden');
+            signupForm.classList.remove('hidden');
+            signupBtn.className = 'w-1/2 py-3 text-xs font-extrabold border-b-2 border-[#1dbf73] text-[#1dbf73] bg-white';
+            signinBtn.className = 'w-1/2 py-3 text-xs font-bold text-slate-500 bg-slate-50 hover:text-slate-900';
+        }
+    }
+    function handleAuthSubmit(e, mode) {
+        e.preventDefault();
+        var registeredUsers = [];
+        try { registeredUsers = JSON.parse(localStorage.getItem('kph_registered_users') || '[]'); } catch (err) {}
+        if (mode === 'signup') {
+            var name = document.getElementById('signup-name').value.trim();
+            var email = document.getElementById('signup-email').value.trim();
+            currentUser = { name: name, email: email };
+            registeredUsers.push(currentUser);
+            try { localStorage.setItem('kph_registered_users', JSON.stringify(registeredUsers)); } catch (err) {}
+        } else {
+            var emailIn = document.getElementById('signin-email').value.trim();
+            var found = registeredUsers.find(function(u) { return u.email.toLowerCase() === emailIn.toLowerCase(); });
+            currentUser = found || { name: emailIn.split('@')[0], email: emailIn };
+        }
+        saveUserState();
+        closeAuthModal();
+        goHomeInstant();
+        showToast('Welcome, ' + currentUser.name + '!');
+    }
+    function openMyAccountModal() {
+        if (!currentUser) return;
+        document.getElementById('account-modal-name').innerText = currentUser.name;
+        document.getElementById('account-modal-email').innerText = currentUser.email;
+        document.getElementById('account-orders-count').innerText = savedOrders.length;
+        var ordersEl = document.getElementById('account-orders-list');
+        ordersEl.innerHTML = '';
+        if (savedOrders.length === 0) {
+            ordersEl.innerHTML = LT + 'p class="text-xs text-slate-400 bg-slate-50 p-3 rounded-lg border border-slate-200"' + GT + 'No orders placed yet.' + LT + '/p' + GT;
+        } else {
+            savedOrders.forEach(function(o) {
+                ordersEl.innerHTML +=
+                    LT + 'div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 flex items-center justify-between gap-2 text-xs"' + GT +
+                        LT + 'div class="min-w-0"' + GT +
+                            LT + 'span class="text-[10px] font-extrabold text-[#1dbf73]"' + GT + '#' + o.id + ' • ' + o.gateway + ' • ' + o.date + LT + '/span' + GT +
+                            LT + 'p class="font-bold text-slate-900 truncate"' + GT + o.title + LT + '/p' + GT +
+                        LT + '/div' + GT +
+                        LT + 'strong class="font-extrabold text-slate-900 shrink-0"' + GT + o.price + LT + '/strong' + GT +
+                    LT + '/div' + GT;
+            });
+        }
+        document.getElementById('account-cart-count').innerText = shoppingCart.length;
+        var cartEl = document.getElementById('account-cart-list');
+        cartEl.innerHTML = '';
+        if (shoppingCart.length === 0) {
+            cartEl.innerHTML = LT + 'p class="text-xs text-slate-400 bg-slate-50 p-3 rounded-lg border border-slate-200"' + GT + 'Your cart is currently empty.' + LT + '/p' + GT;
+        } else {
+            shoppingCart.forEach(function(c) {
+                cartEl.innerHTML +=
+                    LT + 'div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 flex items-center justify-between text-xs"' + GT +
+                        LT + 'span class="font-bold text-slate-800 truncate pr-2"' + GT + c.title + LT + '/span' + GT +
+                        LT + 'strong class="text-[#1dbf73] shrink-0"' + GT + '$' + c.price + LT + '/strong' + GT +
+                    LT + '/div' + GT;
+            });
+        }
+        var modal = document.getElementById('myAccountModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+    function closeMyAccountModal() {
+        var modal = document.getElementById('myAccountModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+    function signOutUser() {
+        currentUser = null;
+        saveUserState();
+        closeMyAccountModal();
+        goHomeInstant();
+        showToast('Signed out of account.');
+    }
+    function renderFaqsSectionAndChatDropdown() {
+        var grid = document.getElementById('faq-grid-container');
+        var select = document.getElementById('chatFaqSelect');
+        if (!grid) return;
+        grid.innerHTML = '';
+        faqsList.forEach(function(item, idx) {
+            var detailsEl = document.createElement('details');
+            detailsEl.className = 'group bg-slate-50 hover:bg-emerald-50/40 border border-slate-200 hover:border-[#1dbf73] rounded-xl p-4 cursor-pointer transition-colors';
+            detailsEl.innerHTML =
+                LT + 'summary class="font-bold text-xs sm:text-sm text-slate-900 flex items-center justify-between list-none"' + GT +
+                    LT + 'span' + GT + item.q + LT + '/span' + GT +
+                    LT + 'i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 group-open:text-[#1dbf73] transition-transform"' + GT + LT + '/i' + GT +
+                LT + '/summary' + GT +
+                LT + 'p class="text-xs text-slate-600 mt-2.5 pt-2.5 border-t border-slate-200/80 leading-relaxed"' + GT + item.a + LT + '/p' + GT;
+            grid.appendChild(detailsEl);
+            if (select) {
+                var opt = document.createElement('option');
+                opt.value = idx;
+                opt.textContent = item.q;
+                select.appendChild(opt);
+            }
+        });
+    }
+    function renderChatHistory() {
+        var container = document.getElementById('chatMessagesContainer');
+        if (!container) return;
+        container.innerHTML =
+            LT + 'div class="flex items-start gap-2"' + GT +
+                LT + 'div class="w-6 h-6 rounded-full bg-[#1dbf73] text-white flex items-center justify-center shrink-0 font-bold text-[10px]"' + GT + 'E' + LT + '/div' + GT +
+                LT + 'div class="bg-white border border-slate-200 rounded-xl rounded-tl-none p-2.5 text-slate-700 shadow-sm"' + GT +
+                    LT + 'p class="font-bold text-slate-900 text-[11px] mb-0.5"' + GT + 'Customer Support' + LT + '/p' + GT +
+                    LT + 'p class="text-xs"' + GT + 'Hi! Select any of our 25 FAQs below or type your question. Your chat history stays saved in your browser.' + LT + '/p' + GT +
+                LT + '/div' + GT +
+            LT + '/div' + GT;
+        chatHistory.forEach(function(msg) {
+            if (msg.isUser) {
+                container.innerHTML +=
+                    LT + 'div class="flex justify-end"' + GT +
+                        LT + 'div class="bg-[#1dbf73] text-white rounded-xl rounded-tr-none p-2.5 max-w-[82%] shadow-sm text-xs"' + GT +
+                            LT + 'p' + GT + msg.text + LT + '/p' + GT +
+                        LT + '/div' + GT +
+                    LT + '/div' + GT;
+            } else {
+                container.innerHTML +=
+                    LT + 'div class="flex items-start gap-2"' + GT +
+                        LT + 'div class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 font-bold text-[10px]"' + GT + 'S' + LT + '/div' + GT +
+                        LT + 'div class="bg-white border border-slate-200 rounded-xl rounded-tl-none p-2.5 text-slate-700 shadow-sm max-w-[84%] text-xs"' + GT +
+                            LT + 'p class="font-bold text-slate-900 text-[11px] mb-0.5"' + GT + msg.sender + LT + '/p' + GT +
+                            LT + 'p' + GT + msg.text + LT + '/p' + GT +
+                        LT + '/div' + GT +
+                    LT + '/div' + GT;
+            }
+        });
+        container.scrollTop = container.scrollHeight;
+    }
+    function toggleLiveChat() {
+        var win = document.getElementById('liveChatWindow');
+        if (win.classList.contains('hidden')) {
+            win.classList.remove('hidden');
+            win.classList.add('flex');
+            var container = document.getElementById('chatMessagesContainer');
+            container.scrollTop = container.scrollHeight;
+        } else {
+            win.classList.add('hidden');
+            win.classList.remove('flex');
+        }
+    }
+    function triggerChatFaqSelect(selectEl) {
+        var idx = selectEl.value;
+        if (idx === '') return;
+        var faqItem = faqsList[parseInt(idx, 10)];
+        if (faqItem) {
+            chatHistory.push({ sender: 'You', text: faqItem.q, isUser: true });
+            chatHistory.push({ sender: 'Studio Support', text: faqItem.a, isUser: false });
+            saveChatState();
+            renderChatHistory();
+        }
+        selectEl.value = '';
+    }
+    function handleLiveChatSubmit(e) {
+        e.preventDefault();
+        var input = document.getElementById('liveChatInput');
+        var msg = input.value.trim();
+        if (!msg) return;
+        chatHistory.push({ sender: 'You', text: msg, isUser: true });
+        saveChatState();
+        renderChatHistory();
+        input.value = '';
+        setTimeout(function() {
+            chatHistory.push({
+                sender: 'Ethan Vance Support',
+                text: 'Thank you! Your message is saved in your chat history and our support team will assist you right away.',
+                isUser: false
+            });
+            saveChatState();
+            renderChatHistory();
+        }, 500);
+    }
+    function updateSliderView() {
+        var mainImg = document.getElementById('detail-img');
+        mainImg.src = currentGigImages[currentImageIndex];
+        document.getElementById('img-counter').innerText = (currentImageIndex + 1) + ' / ' + currentGigImages.length;
+        var slideTagEl = document.getElementById('detail-slide-tag');
+        var slideCapEl = document.getElementById('detail-slide-caption');
+        if (slideTagEl) {
+            if (currentActiveGig.slidesMeta) {
+                slideTagEl.innerText = 'SLIDE ' + (currentImageIndex + 1) + ' OF 5 • VERIFIED PREVIEW';
+                slideCapEl.innerText = currentActiveGig.slidesMeta[currentImageIndex] || currentActiveGig.title;
+            }
+        }
+        var thumbStrip = document.getElementById('detail-thumbnails');
+        thumbStrip.innerHTML = '';
+        currentGigImages.forEach(function(imgUrl, idx) {
+            var isSelected = idx === currentImageIndex;
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'h-16 sm:h-20 rounded-xl overflow-hidden border-2 transition-all ' + (isSelected ? 'border-[#1dbf73] shadow-md scale-[1.02]' : 'border-slate-200 opacity-70 hover:opacity-100');
+            btn.addEventListener('click', function() {
+                currentImageIndex = idx;
+                updateSliderView();
+            });
+            btn.innerHTML = LT + 'img src="' + imgUrl + '" class="w-full h-full object-cover" alt=""' + GT;
+            thumbStrip.appendChild(btn);
+        });
+    }
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % currentGigImages.length;
+        updateSliderView();
+    }
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + currentGigImages.length) % currentGigImages.length;
+        updateSliderView();
+    }
+    function showGigDetail(category, gigId) {
+        currentActiveCategory = category;
+        currentActiveGig = gigsData[category].find(function(g) { return g.id === gigId; });
+        currentGigImages = currentActiveGig.images;
+        currentImageIndex = 0;
+        updateSliderView();
+        var catNames = {
+            audio: 'Audio Engineering',
+            video: 'Hollywood VFX & Video',
+            photo: 'Commercial Retouching',
+            webdesign: currentActiveGig.subcategory || 'Web Design',
+            development: currentActiveGig.subcategory || 'Development'
+        };
+        document.getElementById('detail-category-badge').innerText = catNames[category] || 'Studio Service';
+        document.getElementById('detail-title').innerText = currentActiveGig.title;
+        document.getElementById('profile-rating').innerText = currentActiveGig.rating;
+        document.getElementById('profile-reviews').innerText = currentActiveGig.reviews;
+        document.getElementById('profile-bio').innerText = bios[category];
+        var summaryContainer = document.getElementById('detail-summary');
+        summaryContainer.innerHTML = '';
+        currentActiveGig.summary.forEach(function(point) {
+            summaryContainer.innerHTML += LT + 'li' + GT + point + LT + '/li' + GT;
+        });
+        document.getElementById('home-page').classList.add('hidden');
+        document.getElementById('gig-detail-page').classList.remove('hidden');
+        scrollAppToTop();
+        selectPackage('basic');
+    }
+    function selectPackage(tier) {
+        currentActiveTier = tier;
+        ['basic', 'standard', 'premium'].forEach(function(pkg) {
+            document.getElementById('pkg-' + pkg).classList.remove('pkg-active');
+            document.getElementById('pkg-' + pkg).classList.add('pkg-inactive');
+        });
+        document.getElementById('pkg-' + tier).classList.remove('pkg-inactive');
+        document.getElementById('pkg-' + tier).classList.add('pkg-active');
+        var pkgData = currentActiveGig.packages[tier];
+        var price = currentActiveGig.prices[tier];
+        document.getElementById('detail-price').innerText = '$' + price;
+        document.getElementById('pkg-name-display').innerText = pkgData.name;
+        document.getElementById('pkg-desc').innerText = pkgData.desc;
+        document.getElementById('pkg-delivery').innerText = pkgData.delivery;
+        var featuresContainer = document.getElementById('pkg-features');
+        featuresContainer.innerHTML = '';
+        pkgData.features.forEach(function(feature) {
+            var iconHtml = feature.active
+                ? LT + 'span class="w-4 h-4 rounded-full bg-emerald-100 text-[#1dbf73] flex items-center justify-center text-[10px] shrink-0"' + GT + LT + 'i class="fa-solid fa-check"' + GT + LT + '/i' + GT + LT + '/span' + GT
+                : LT + 'span class="w-4 h-4 rounded-full bg-slate-100 text-slate-300 flex items-center justify-center text-[10px] shrink-0"' + GT + LT + 'i class="fa-solid fa-xmark"' + GT + LT + '/i' + GT + LT + '/span' + GT;
+            var textClass = feature.active ? 'check-active' : 'check-inactive';
+            featuresContainer.innerHTML += LT + 'li class="flex items-center gap-2.5 ' + textClass + '"' + GT + iconHtml + ' ' + LT + 'span' + GT + feature.text + LT + '/span' + GT + LT + '/li' + GT;
+        });
+    }
+    function bindAllButtonsAndEvents() {
+        document.querySelectorAll('[data-tab]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                changeTab(this.getAttribute('data-tab'), this);
+            });
+        });
+        document.querySelectorAll('[data-footer-cat]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                footerSelectCategory(this.getAttribute('data-footer-cat'));
+            });
+        });
+        document.querySelectorAll('[data-pkg]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                selectPackage(this.getAttribute('data-pkg'));
+            });
+        });
+        document.querySelectorAll('[data-gateway]').forEach(function(tile) {
+            tile.addEventListener('click', function() {
+                selectPaymentGateway(this.getAttribute('data-gateway'), this);
+            });
+        });
+        var directGatewayBtn = document.getElementById('direct-gateway-btn');
+        if (directGatewayBtn) {
+            directGatewayBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var targetUrl = MY_PAYMENT_LINKS[selectedGateway] || MY_PAYMENT_LINKS.Stripe;
+                window.open(targetUrl, '_blank', 'noopener,noreferrer');
+            });
+        }
+        document.querySelectorAll('[data-action]').forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                var act = this.getAttribute('data-action');
+                if (act === 'go-home') goHomeInstant();
+                else if (act === 'open-signin') openAuthModal('signin');
+                else if (act === 'open-signup') openAuthModal('signup');
+                else if (act === 'open-account') openMyAccountModal();
+                else if (act === 'open-cart') openCartDrawer();
+                else if (act === 'back-home') showHomePageWithDelay();
+                else if (act === 'prev-img') prevImage();
+                else if (act === 'next-img') nextImage();
+                else if (act === 'order-current') orderNowCurrentGig();
+                else if (act === 'cart-current') addCurrentGigToCart();
+                else if (act === 'switch-signin') switchAuthTab('signin');
+                else if (act === 'switch-signup') switchAuthTab('signup');
+                else if (act === 'close-auth') closeAuthModal();
+                else if (act === 'close-account') closeMyAccountModal();
+                else if (act === 'sign-out') signOutUser();
+                else if (act === 'account-to-cart') { closeMyAccountModal(); openCartDrawer(); }
+                else if (act === 'close-cart') closeCartDrawer();
+                else if (act === 'cart-checkout') proceedFromCartToCheckout();
+                else if (act === 'close-order') closeOrderModal();
+                else if (act === 'toggle-chat') toggleLiveChat();
+            });
+        });
+        var signinForm = document.getElementById('signinForm');
+        if (signinForm) signinForm.addEventListener('submit', function(e) { handleAuthSubmit(e, 'signin'); });
+        var signupForm = document.getElementById('signupForm');
+        if (signupForm) signupForm.addEventListener('submit', function(e) { handleAuthSubmit(e, 'signup'); });
+        var studioOrderForm = document.getElementById('studioOrderForm');
+        if (studioOrderForm) studioOrderForm.addEventListener('submit', submitStudioOrder);
+        var liveChatForm = document.getElementById('liveChatForm');
+        if (liveChatForm) liveChatForm.addEventListener('submit', handleLiveChatSubmit);
+        var chatFaqSelect = document.getElementById('chatFaqSelect');
+        if (chatFaqSelect) chatFaqSelect.addEventListener('change', function() { triggerChatFaqSelect(this); });
+    }
+    function initZonixApp() {
+        mountFullScreenInWordPress();
+        syncCustomLinksToPage();
+        bindAllButtonsAndEvents();
+        loadPersistedState();
+        renderGigs('audio');
+        renderFaqsSectionAndChatDropdown();
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initZonixApp);
+    } else {
+        initZonixApp();
+    }
+})();
+</script>
+<!-- /wp:html -->
