@@ -331,6 +331,62 @@ html, body {
     border-radius: 50%;
     animation: kphSpin 0.8s linear infinite;
 }
+#policyViewerModal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 2147483647 !important;
+    background: rgba(15, 23, 42, 0.72) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    padding: 16px !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+#policyViewerModal .policy-tab-btn {
+    padding: 7px 13px !important;
+    border-radius: 9999px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    border: 1px solid #e2e8f0 !important;
+    background: #ffffff !important;
+    color: #475569 !important;
+    transition: all 0.16s ease !important;
+    white-space: nowrap !important;
+}
+#policyViewerModal .policy-tab-btn:hover {
+    border-color: #1dbf73 !important;
+    color: #1dbf73 !important;
+    background: #f0fdf4 !important;
+}
+#policyViewerModal .policy-tab-btn.active {
+    background: #1dbf73 !important;
+    color: #ffffff !important;
+    border-color: #1dbf73 !important;
+    box-shadow: 0 4px 10px rgba(29, 191, 115, 0.25) !important;
+}
+#policyViewerModal .policy-section-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+.kph-policy-inline-link {
+    color: #1dbf73 !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    text-decoration: underline !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+}
+.kph-policy-inline-link:hover {
+    color: #15995a !important;
+}
 </style>
 
 <div id="kph-app-root">
@@ -342,7 +398,7 @@ html, body {
                     <i class="fa-solid fa-crown text-lg"></i>
                 </div>
                 <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 group-hover:text-[#1dbf73] transition-colors leading-none">
-                    Zonix Casino Production House<span class="text-[#1dbf73]">.</span>
+                    King Production House<span class="text-[#1dbf73]">.</span>
                 </h1>
             </div>
             <div class="flex items-center gap-3 sm:gap-4">
@@ -519,7 +575,7 @@ html, body {
                                     <h3 class="text-base font-extrabold text-slate-900">Ethan Vance</h3>
                                     <span class="bg-blue-50 text-blue-700 border border-blue-200 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full">PRO VERIFIED</span>
                                 </div>
-                                <p class="text-slate-500 text-xs font-medium">Founder &amp; Lead Architect, Zonix Casino Production House</p>
+                                <p class="text-slate-500 text-xs font-medium">Founder &amp; Lead Architect, King Production House</p>
                                 <div class="flex items-center text-amber-500 font-bold text-xs mt-0.5">
                                     ★ <span id="profile-rating" class="ml-1">4.9</span>
                                     <span class="text-slate-500 font-medium ml-1">(<span id="profile-reviews">840</span> verified client reviews)</span>
@@ -580,7 +636,7 @@ html, body {
                         <div class="w-8 h-8 rounded-lg bg-[#1dbf73] text-white flex items-center justify-center">
                             <i class="fa-solid fa-crown text-xs"></i>
                         </div>
-                        <span class="text-lg font-extrabold text-white group-hover:text-[#1dbf73] transition-colors">Zonix Casino Production House<span class="text-[#1dbf73]">.</span></span>
+                        <span class="text-lg font-extrabold text-white group-hover:text-[#1dbf73] transition-colors">King Production House<span class="text-[#1dbf73]">.</span></span>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed mb-4">
                         Full-service digital production house offering Audio, Video, Photo, Web Design templates, and Custom App Development.
@@ -693,7 +749,7 @@ html, body {
                 </div>
             </div>
             <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-500">
-                <p>&copy; 2026 Zonix Casino Production House. All rights reserved.</p>
+                <p>&copy; 2026 King Production House. All rights reserved.</p>
                 <div class="flex items-center gap-4">
                     <a href="#faq-section" class="footer-simple-link">25 FAQs</a>
                 </div>
@@ -1365,7 +1421,7 @@ html, body {
         });
     });
     var faqsList = [
-        { q: "1. What services does Zonix Casino Production House offer?", a: "We offer 135 unique studio services across 5 categories: Audio Mixing and Mastering, Hollywood Video and VFX, Commercial Photo Retouching, UI/UX Web Design (90 templates across 9 industries), and Full-Stack Web and Mobile App Development." },
+        { q: "1. What services does King Production House offer?", a: "We offer 135 unique studio services across 5 categories: Audio Mixing and Mastering, Hollywood Video and VFX, Commercial Photo Retouching, UI/UX Web Design (90 templates across 9 industries), and Full-Stack Web and Mobile App Development." },
         { q: "2. How do I place an order on the marketplace?", a: "Click Order Now on any service card or package, fill in your brief, choose your preferred payment method (Stripe, PayPal, Wise, Whop, or Payoneer), and confirm." },
         { q: "3. Can I add multiple services to my cart and order together?", a: "Yes! Click Add to Cart on any Audio, Video, Web Design, or Development service. Your cart is located right under My Account and automatically saves in your browser." },
         { q: "4. Which payment gateways do you accept?", a: "We accept Stripe, PayPal, Wise, Whop, and Payoneer with official gateway support." },
@@ -1796,7 +1852,7 @@ html, body {
             }
         }
         savedOrders.unshift({
-            id: 'ZPH-' + Math.floor(1000 + Math.random() * 9000),
+            id: 'KPH-' + Math.floor(1000 + Math.random() * 9000),
             title: orderTitle,
             price: orderPrice,
             gateway: selectedGateway,
@@ -2173,7 +2229,7 @@ html, body {
         var chatFaqSelect = document.getElementById('chatFaqSelect');
         if (chatFaqSelect) chatFaqSelect.addEventListener('change', function() { triggerChatFaqSelect(this); });
     }
-    function initZonixApp() {
+    function initKphApp() {
         mountFullScreenInWordPress();
         syncCustomLinksToPage();
         bindAllButtonsAndEvents();
@@ -2182,80 +2238,21 @@ html, body {
         renderFaqsSectionAndChatDropdown();
     }
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initZonixApp);
+        document.addEventListener('DOMContentLoaded', initKphApp);
     } else {
-        initZonixApp();
+        initKphApp();
     }
 })();
 </script>
-<!-- /wp:html -->
-<!-- ========== ZONIX POLICIES POPUP (WORDPRESS-SAFE FIXED) ========== -->
-<style>
-#policyViewerModal {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    z-index: 2147483647 !important;
-    background: rgba(15, 23, 42, 0.72) !important;
-    backdrop-filter: blur(4px) !important;
-    -webkit-backdrop-filter: blur(4px) !important;
-    padding: 16px !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-#policyViewerModal .policy-tab-btn {
-    padding: 7px 13px !important;
-    border-radius: 9999px !important;
-    font-size: 11px !important;
-    font-weight: 700 !important;
-    cursor: pointer !important;
-    border: 1px solid #e2e8f0 !important;
-    background: #ffffff !important;
-    color: #475569 !important;
-    transition: all 0.16s ease !important;
-    white-space: nowrap !important;
-}
-#policyViewerModal .policy-tab-btn:hover {
-    border-color: #1dbf73 !important;
-    color: #1dbf73 !important;
-    background: #f0fdf4 !important;
-}
-#policyViewerModal .policy-tab-btn.active {
-    background: #1dbf73 !important;
-    color: #ffffff !important;
-    border-color: #1dbf73 !important;
-    box-shadow: 0 4px 10px rgba(29, 191, 115, 0.25) !important;
-}
-#policyViewerModal .policy-section-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 14px 16px;
-}
-.kph-policy-inline-link {
-    color: #1dbf73 !important;
-    font-weight: 700 !important;
-    cursor: pointer !important;
-    text-decoration: underline !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    font-size: inherit !important;
-}
-.kph-policy-inline-link:hover {
-    color: #15995a !important;
-}
-</style>
 
+<!-- ========== KPH POLICIES POPUP (WORDPRESS-SAFE) ========== -->
 <script>
 (function() {
     var POLICIES_DATA = {
         privacy: {
             label: "Privacy Policy",
             title: "Privacy Policy",
-            intro: "Zonix Casino Production House respects your privacy and is committed to protecting the personal and project information you share when browsing our marketplace, creating an account, or placing an order.",
+            intro: "King Production House respects your privacy and is committed to protecting the personal and project information you share when browsing our marketplace, creating an account, or placing an order.",
             sections: [
                 { h: "1. Information We Collect", p: "When you sign up, place an order, or use live support, we collect only the details you provide: your full name, delivery email address, selected service package, and project brief or asset links (such as Google Drive, Dropbox, or GitHub URLs)." },
                 { h: "2. Payment Data Security", p: "We do not store your credit card numbers, CVV codes, or bank credentials on our servers. All financial transactions are processed directly through verified third-party payment gateways including Stripe, PayPal, Wise, Whop, and Payoneer under their respective PCI-DSS compliant security standards." },
@@ -2267,7 +2264,7 @@ html, body {
         terms: {
             label: "Terms & Conditions",
             title: "Terms & Conditions of Service",
-            intro: "By accessing Zonix Casino Production House, creating an account, or ordering any of our 135 digital studio services, you agree to be bound by the following Terms & Conditions.",
+            intro: "By accessing King Production House, creating an account, or ordering any of our 135 digital studio services, you agree to be bound by the following Terms & Conditions.",
             sections: [
                 { h: "1. Scope of Services", p: "We provide custom digital production across five categories: Audio Services, Video & VFX Services, Photo Editing, UI/UX Web Design Templates, and Full-Stack Web & Mobile App Development. Each package tier (Basic, Standard, Premium) clearly lists its deliverables and estimated turnaround." },
                 { h: "2. Client Requirements & Asset Delivery", p: "Production timelines begin once payment is verified and the client submits complete project requirements, briefs, and accessible asset links. Delays in providing required files or feedback may extend delivery timelines accordingly." },
@@ -2279,7 +2276,7 @@ html, body {
         refund: {
             label: "Refund Policy",
             title: "Refund, Cancellation & Escrow Policy",
-            intro: "Because Zonix Casino Production House delivers custom, made-to-order digital assets and engineering work, we maintain a transparent, fair, and escrow-protected refund policy.",
+            intro: "Because King Production House delivers custom, made-to-order digital assets and engineering work, we maintain a transparent, fair, and escrow-protected refund policy.",
             sections: [
                 { h: "1. Cancellation Before Production Starts", p: "If you request a cancellation before our studio team has started production on your order (typically within 6 hours of order confirmation), you are eligible for a 100% full refund to your original payment method." },
                 { h: "2. Revision-First Satisfaction Guarantee", p: "If a delivered draft does not match your project brief, we provide unlimited revisions at no extra cost until the deliverable aligns with the agreed package specifications." },
@@ -2291,7 +2288,7 @@ html, body {
         delivery: {
             label: "Delivery Policy",
             title: "Digital Delivery & Turnaround Policy",
-            intro: "All products and services on Zonix Casino Production House are 100% digital. No physical shipping is required.",
+            intro: "All products and services on King Production House are 100% digital. No physical shipping is required.",
             sections: [
                 { h: "1. Standard Turnaround Times", p: "Estimated delivery windows by category: Photo Editing (1–3 business days), Audio Engineering & Web Design Templates (2–5 business days), Video/VFX & Full-Stack Web/App Development (4–10 business days depending on package tier)." },
                 { h: "2. Delivery Method", p: "Completed master files, download archives, or repository links are delivered directly to the Delivery Email provided during checkout, and order records are logged in your My Account dashboard." },
@@ -2301,7 +2298,7 @@ html, body {
         cookies: {
             label: "Cookie Policy",
             title: "Cookie & Local Storage Policy",
-            intro: "This policy explains how Zonix Casino Production House uses browser storage and essential cookies to keep the marketplace fast and personalized.",
+            intro: "This policy explains how King Production House uses browser storage and essential cookies to keep the marketplace fast and personalized.",
             sections: [
                 { h: "1. Essential Functional Storage", p: "We use browser localStorage keys strictly for core functionality: saving your Shopping Cart items (kph_cart), keeping you signed into My Account (kph_user), displaying your Saved Orders (kph_orders), and preserving your Live Support messages (kph_chat_history)." },
                 { h: "2. Third-Party Payment Gateways", p: "When you click through to Stripe, PayPal, Wise, Whop, or Payoneer to complete a payment, those providers may set their own security and fraud-prevention cookies in accordance with their privacy policies." },
@@ -2313,7 +2310,7 @@ html, body {
             title: "Copyright, Licensing & DMCA Policy",
             intro: "We respect the intellectual property rights of creators, clients, and third-party rights holders.",
             sections: [
-                { h: "1. Client-Supplied Materials", p: "Clients confirm that all audio stems, video footage, photographs, logos, and brand assets submitted for editing or integration are owned by them or properly licensed. Zonix Casino Production House is not liable for unlicensed third-party materials supplied by a client." },
+                { h: "1. Client-Supplied Materials", p: "Clients confirm that all audio stems, video footage, photographs, logos, and brand assets submitted for editing or integration are owned by them or properly licensed. King Production House is not liable for unlicensed third-party materials supplied by a client." },
                 { h: "2. Ownership of Original Deliverables", p: "All original custom work created specifically for your order becomes your property upon full payment. Reusable underlying code libraries, stock previews, or studio presets remain subject to their respective open-source or commercial licenses." },
                 { h: "3. DMCA Takedown Notices", p: "If you believe any content displayed on our platform infringes your copyright, please notify our support desk with proof of ownership and the exact URL or item ID for prompt review and removal." }
             ]
@@ -2325,7 +2322,7 @@ html, body {
             sections: [
                 { h: "1. Prohibited Content", p: "We reserve the right to refuse or cancel orders involving illegal activities, fraud, malware, hate speech, copyright infringement, unauthorized impersonation, or explicit/abusive material." },
                 { h: "2. Third-Party Platform Approvals", p: "While we engineer audio, video, websites, and mobile apps to meet industry standards (such as Spotify LUFS, Google Play, Apple App Store, and payment gateway guidelines), final approval or monetization decisions on third-party platforms remain solely at the discretion of those platforms." },
-                { h: "3. Limitation of Liability", p: "All services are provided on a professional best-effort basis. Zonix Casino Production House shall not be liable for indirect, incidental, or consequential damages exceeding the total fee paid for the specific service order." }
+                { h: "3. Limitation of Liability", p: "All services are provided on a professional best-effort basis. King Production House shall not be liable for indirect, incidental, or consequential damages exceeding the total fee paid for the specific service order." }
             ]
         }
     };
@@ -2349,7 +2346,6 @@ html, body {
         var box = document.createElement("div");
         box.className = "bg-white max-w-3xl w-full rounded-2xl border border-slate-200 shadow-2xl overflow-hidden flex flex-col max-h-[88vh]";
 
-        // Header
         var header = document.createElement("div");
         header.className = "bg-slate-900 text-white px-5 py-4 flex items-center justify-between shrink-0";
 
@@ -2369,7 +2365,7 @@ html, body {
         h3.textContent = "Legal & Studio Policies";
         var sub = document.createElement("span");
         sub.className = "text-[11px] text-emerald-400 font-medium block";
-        sub.textContent = "Zonix Casino Production House • Effective November 2026";
+        sub.textContent = "King Production House • Effective November 2026";
         titleWrap.appendChild(h3);
         titleWrap.appendChild(sub);
 
@@ -2388,17 +2384,14 @@ html, body {
         header.appendChild(leftHead);
         header.appendChild(closeBtn);
 
-        // Tabs Bar
         var tabsBar = document.createElement("div");
         tabsBar.id = "policy-tabs-bar";
         tabsBar.className = "px-5 py-3 bg-slate-50 border-b border-slate-200 flex flex-wrap gap-2 shrink-0";
 
-        // Body
         var body = document.createElement("div");
         body.id = "policy-modal-body";
         body.className = "p-5 sm:p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed";
 
-        // Footer
         var foot = document.createElement("div");
         foot.className = "px-5 py-3.5 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 shrink-0";
 
@@ -2584,4 +2577,5 @@ html, body {
     }
 })();
 </script>
-<!-- ========== /ZONIX POLICIES POPUP ========== -->
+<!-- ========== /KPH POLICIES POPUP ========== -->
+<!-- /wp:html -->
