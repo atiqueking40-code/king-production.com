@@ -2189,3 +2189,399 @@ html, body {
 })();
 </script>
 <!-- /wp:html -->
+<!-- ========== ZONIX POLICIES POPUP (WORDPRESS-SAFE FIXED) ========== -->
+<style>
+#policyViewerModal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 2147483647 !important;
+    background: rgba(15, 23, 42, 0.72) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    padding: 16px !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+#policyViewerModal .policy-tab-btn {
+    padding: 7px 13px !important;
+    border-radius: 9999px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    border: 1px solid #e2e8f0 !important;
+    background: #ffffff !important;
+    color: #475569 !important;
+    transition: all 0.16s ease !important;
+    white-space: nowrap !important;
+}
+#policyViewerModal .policy-tab-btn:hover {
+    border-color: #1dbf73 !important;
+    color: #1dbf73 !important;
+    background: #f0fdf4 !important;
+}
+#policyViewerModal .policy-tab-btn.active {
+    background: #1dbf73 !important;
+    color: #ffffff !important;
+    border-color: #1dbf73 !important;
+    box-shadow: 0 4px 10px rgba(29, 191, 115, 0.25) !important;
+}
+#policyViewerModal .policy-section-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+.kph-policy-inline-link {
+    color: #1dbf73 !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    text-decoration: underline !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+}
+.kph-policy-inline-link:hover {
+    color: #15995a !important;
+}
+</style>
+
+<script>
+(function() {
+    var POLICIES_DATA = {
+        privacy: {
+            label: "Privacy Policy",
+            title: "Privacy Policy",
+            intro: "Zonix Casino Production House respects your privacy and is committed to protecting the personal and project information you share when browsing our marketplace, creating an account, or placing an order.",
+            sections: [
+                { h: "1. Information We Collect", p: "When you sign up, place an order, or use live support, we collect only the details you provide: your full name, delivery email address, selected service package, and project brief or asset links (such as Google Drive, Dropbox, or GitHub URLs)." },
+                { h: "2. Payment Data Security", p: "We do not store your credit card numbers, CVV codes, or bank credentials on our servers. All financial transactions are processed directly through verified third-party payment gateways including Stripe, PayPal, Wise, Whop, and Payoneer under their respective PCI-DSS compliant security standards." },
+                { h: "3. Browser Storage & Persistence", p: "For your convenience, your client profile, shopping cart items, saved order records, and live support chat history are stored locally in your browser's localStorage so your session persists across refreshes." },
+                { h: "4. How We Use Your Data", p: "Your information is used strictly to fulfill ordered digital services (Audio, Video, Photo, Web Design, and Development), deliver master files to your email, provide revisions, and respond to customer support inquiries. We never sell or rent your personal data to third parties." },
+                { h: "5. Data Deletion & User Rights", p: "You may clear your locally saved account, cart, and chat history at any time by signing out or clearing browser site data, or contact our support desk to request permanent removal of any order records." }
+            ]
+        },
+        terms: {
+            label: "Terms & Conditions",
+            title: "Terms & Conditions of Service",
+            intro: "By accessing Zonix Casino Production House, creating an account, or ordering any of our 135 digital studio services, you agree to be bound by the following Terms & Conditions.",
+            sections: [
+                { h: "1. Scope of Services", p: "We provide custom digital production across five categories: Audio Services, Video & VFX Services, Photo Editing, UI/UX Web Design Templates, and Full-Stack Web & Mobile App Development. Each package tier (Basic, Standard, Premium) clearly lists its deliverables and estimated turnaround." },
+                { h: "2. Client Requirements & Asset Delivery", p: "Production timelines begin once payment is verified and the client submits complete project requirements, briefs, and accessible asset links. Delays in providing required files or feedback may extend delivery timelines accordingly." },
+                { h: "3. Unlimited Revisions Policy", p: "All studio packages include unlimited revisions within the original scope of the selected package. Revisions cover refinements, adjustments, and fixes—not a complete change of project concept, new pages/screens, or extra features outside the ordered tier." },
+                { h: "4. Commercial Rights & Licensing", p: "Upon full payment and order completion, full commercial usage rights for the delivered final work transfer to the client (as specified in the chosen tier). Source files (PSD, WAV stems, project repos) are included where stated in the package features." },
+                { h: "5. Account Responsibility", p: "Clients are responsible for providing accurate delivery email addresses and maintaining the confidentiality of their account credentials." }
+            ]
+        },
+        refund: {
+            label: "Refund Policy",
+            title: "Refund, Cancellation & Escrow Policy",
+            intro: "Because Zonix Casino Production House delivers custom, made-to-order digital assets and engineering work, we maintain a transparent, fair, and escrow-protected refund policy.",
+            sections: [
+                { h: "1. Cancellation Before Production Starts", p: "If you request a cancellation before our studio team has started production on your order (typically within 6 hours of order confirmation), you are eligible for a 100% full refund to your original payment method." },
+                { h: "2. Revision-First Satisfaction Guarantee", p: "If a delivered draft does not match your project brief, we provide unlimited revisions at no extra cost until the deliverable aligns with the agreed package specifications." },
+                { h: "3. Non-Refundable Digital Deliverables", p: "Once custom audio masters, edited videos, retouched photos, web templates, or custom source code have been completed and delivered according to your submitted brief, orders are generally non-refundable due to the irreversible nature of digital goods." },
+                { h: "4. Partial Refunds & Non-Delivery Protection", p: "If we are unable to deliver your order within the agreed timeframe (excluding delays caused by missing client assets) or fail to meet core stated deliverables, you are entitled to a partial or full refund based on the milestone completed." },
+                { h: "5. Dispute Resolution", p: "Please contact our 24/7 Live Support desk before opening any bank or payment gateway dispute (Stripe, PayPal, Wise, Whop, or Payoneer). Most billing or delivery concerns are resolved within 24–48 hours." }
+            ]
+        },
+        delivery: {
+            label: "Delivery Policy",
+            title: "Digital Delivery & Turnaround Policy",
+            intro: "All products and services on Zonix Casino Production House are 100% digital. No physical shipping is required.",
+            sections: [
+                { h: "1. Standard Turnaround Times", p: "Estimated delivery windows by category: Photo Editing (1–3 business days), Audio Engineering & Web Design Templates (2–5 business days), Video/VFX & Full-Stack Web/App Development (4–10 business days depending on package tier)." },
+                { h: "2. Delivery Method", p: "Completed master files, download archives, or repository links are delivered directly to the Delivery Email provided during checkout, and order records are logged in your My Account dashboard." },
+                { h: "3. File Retention", p: "We recommend downloading and backing up all delivered files upon receipt. Our studio archives completed project deliverables for up to 30 days after final approval." }
+            ]
+        },
+        cookies: {
+            label: "Cookie Policy",
+            title: "Cookie & Local Storage Policy",
+            intro: "This policy explains how Zonix Casino Production House uses browser storage and essential cookies to keep the marketplace fast and personalized.",
+            sections: [
+                { h: "1. Essential Functional Storage", p: "We use browser localStorage keys strictly for core functionality: saving your Shopping Cart items (kph_cart), keeping you signed into My Account (kph_user), displaying your Saved Orders (kph_orders), and preserving your Live Support messages (kph_chat_history)." },
+                { h: "2. Third-Party Payment Gateways", p: "When you click through to Stripe, PayPal, Wise, Whop, or Payoneer to complete a payment, those providers may set their own security and fraud-prevention cookies in accordance with their privacy policies." },
+                { h: "3. Managing Your Preferences", p: "You can clear or disable cookies and localStorage at any time through your browser settings; however, disabling local storage will prevent your cart and account session from staying saved between visits." }
+            ]
+        },
+        dmca: {
+            label: "Copyright & DMCA",
+            title: "Copyright, Licensing & DMCA Policy",
+            intro: "We respect the intellectual property rights of creators, clients, and third-party rights holders.",
+            sections: [
+                { h: "1. Client-Supplied Materials", p: "Clients confirm that all audio stems, video footage, photographs, logos, and brand assets submitted for editing or integration are owned by them or properly licensed. Zonix Casino Production House is not liable for unlicensed third-party materials supplied by a client." },
+                { h: "2. Ownership of Original Deliverables", p: "All original custom work created specifically for your order becomes your property upon full payment. Reusable underlying code libraries, stock previews, or studio presets remain subject to their respective open-source or commercial licenses." },
+                { h: "3. DMCA Takedown Notices", p: "If you believe any content displayed on our platform infringes your copyright, please notify our support desk with proof of ownership and the exact URL or item ID for prompt review and removal." }
+            ]
+        },
+        disclaimer: {
+            label: "Disclaimer & AUP",
+            title: "Disclaimer & Acceptable Use Policy",
+            intro: "Please review the following boundaries regarding acceptable projects and third-party platform outcomes.",
+            sections: [
+                { h: "1. Prohibited Content", p: "We reserve the right to refuse or cancel orders involving illegal activities, fraud, malware, hate speech, copyright infringement, unauthorized impersonation, or explicit/abusive material." },
+                { h: "2. Third-Party Platform Approvals", p: "While we engineer audio, video, websites, and mobile apps to meet industry standards (such as Spotify LUFS, Google Play, Apple App Store, and payment gateway guidelines), final approval or monetization decisions on third-party platforms remain solely at the discretion of those platforms." },
+                { h: "3. Limitation of Liability", p: "All services are provided on a professional best-effort basis. Zonix Casino Production House shall not be liable for indirect, incidental, or consequential damages exceeding the total fee paid for the specific service order." }
+            ]
+        }
+    };
+
+    var POLICY_KEYS = ["privacy", "terms", "refund", "delivery", "cookies", "dmca", "disclaimer"];
+
+    function ensurePolicyModalExists() {
+        var existing = document.getElementById("policyViewerModal");
+        var root = document.getElementById("kph-app-root") || document.body;
+        if (existing) {
+            if (existing.parentElement !== root) {
+                root.appendChild(existing);
+            }
+            return existing;
+        }
+
+        var modal = document.createElement("div");
+        modal.id = "policyViewerModal";
+        modal.style.setProperty("display", "none", "important");
+
+        var box = document.createElement("div");
+        box.className = "bg-white max-w-3xl w-full rounded-2xl border border-slate-200 shadow-2xl overflow-hidden flex flex-col max-h-[88vh]";
+
+        // Header
+        var header = document.createElement("div");
+        header.className = "bg-slate-900 text-white px-5 py-4 flex items-center justify-between shrink-0";
+
+        var leftHead = document.createElement("div");
+        leftHead.className = "flex items-center gap-2.5";
+
+        var iconWrap = document.createElement("div");
+        iconWrap.className = "w-8 h-8 rounded-lg bg-[#1dbf73] text-white flex items-center justify-center shrink-0";
+        var shield = document.createElement("i");
+        shield.className = "fa-solid fa-shield-halved text-sm";
+        iconWrap.appendChild(shield);
+
+        var titleWrap = document.createElement("div");
+        var h3 = document.createElement("h3");
+        h3.id = "policy-modal-heading";
+        h3.className = "font-extrabold text-sm sm:text-base leading-tight";
+        h3.textContent = "Legal & Studio Policies";
+        var sub = document.createElement("span");
+        sub.className = "text-[11px] text-emerald-400 font-medium block";
+        sub.textContent = "Zonix Casino Production House • Effective November 2026";
+        titleWrap.appendChild(h3);
+        titleWrap.appendChild(sub);
+
+        leftHead.appendChild(iconWrap);
+        leftHead.appendChild(titleWrap);
+
+        var closeBtn = document.createElement("button");
+        closeBtn.type = "button";
+        closeBtn.className = "text-slate-400 hover:text-white p-1.5 text-base cursor-pointer";
+        closeBtn.setAttribute("aria-label", "Close Policies");
+        var xIcon = document.createElement("i");
+        xIcon.className = "fa-solid fa-xmark";
+        closeBtn.appendChild(xIcon);
+        closeBtn.addEventListener("click", closePolicyModal);
+
+        header.appendChild(leftHead);
+        header.appendChild(closeBtn);
+
+        // Tabs Bar
+        var tabsBar = document.createElement("div");
+        tabsBar.id = "policy-tabs-bar";
+        tabsBar.className = "px-5 py-3 bg-slate-50 border-b border-slate-200 flex flex-wrap gap-2 shrink-0";
+
+        // Body
+        var body = document.createElement("div");
+        body.id = "policy-modal-body";
+        body.className = "p-5 sm:p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed";
+
+        // Footer
+        var foot = document.createElement("div");
+        foot.className = "px-5 py-3.5 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 shrink-0";
+
+        var footNote = document.createElement("p");
+        footNote.className = "text-[11px] text-slate-500 font-medium";
+        footNote.textContent = "Questions about our policies? Contact our 24/7 Live Support desk anytime.";
+
+        var acceptBtn = document.createElement("button");
+        acceptBtn.type = "button";
+        acceptBtn.className = "btn-emerald px-5 py-2 text-xs";
+        acceptBtn.textContent = "I Understand & Close";
+        acceptBtn.addEventListener("click", closePolicyModal);
+
+        foot.appendChild(footNote);
+        foot.appendChild(acceptBtn);
+
+        box.appendChild(header);
+        box.appendChild(tabsBar);
+        box.appendChild(body);
+        box.appendChild(foot);
+        modal.appendChild(box);
+
+        modal.addEventListener("click", function(e) {
+            if (e.target === modal) closePolicyModal();
+        });
+
+        root.appendChild(modal);
+        return modal;
+    }
+
+    function openPolicyModal(policyKey) {
+        var modal = ensurePolicyModalExists();
+        var keyToOpen = POLICIES_DATA[policyKey] ? policyKey : "privacy";
+        renderPolicyContent(keyToOpen);
+        modal.style.setProperty("display", "flex", "important");
+    }
+
+    function closePolicyModal() {
+        var modal = document.getElementById("policyViewerModal");
+        if (modal) {
+            modal.style.setProperty("display", "none", "important");
+        }
+    }
+
+    function renderPolicyContent(activeKey) {
+        var data = POLICIES_DATA[activeKey] || POLICIES_DATA.privacy;
+        var heading = document.getElementById("policy-modal-heading");
+        var tabsBar = document.getElementById("policy-tabs-bar");
+        var body = document.getElementById("policy-modal-body");
+        if (!heading) return;
+        if (!tabsBar) return;
+        if (!body) return;
+
+        heading.textContent = data.title;
+        tabsBar.innerHTML = "";
+        POLICY_KEYS.forEach(function(key) {
+            var btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "policy-tab-btn" + (key === activeKey ? " active" : "");
+            btn.textContent = POLICIES_DATA[key].label;
+            btn.addEventListener("click", function() {
+                renderPolicyContent(key);
+            });
+            tabsBar.appendChild(btn);
+        });
+
+        body.innerHTML = "";
+        var introP = document.createElement("p");
+        introP.className = "text-slate-600 font-medium text-xs sm:text-sm pb-2 border-b border-slate-100";
+        introP.textContent = data.intro;
+        body.appendChild(introP);
+
+        data.sections.forEach(function(sec) {
+            var card = document.createElement("div");
+            card.className = "policy-section-card";
+            var h4 = document.createElement("h4");
+            h4.className = "font-extrabold text-slate-900 text-xs sm:text-sm mb-1.5";
+            h4.textContent = sec.h;
+            var p = document.createElement("p");
+            p.className = "text-slate-600 text-xs leading-relaxed";
+            p.textContent = sec.p;
+            card.appendChild(h4);
+            card.appendChild(p);
+            body.appendChild(card);
+        });
+        body.scrollTop = 0;
+    }
+
+    function createConsentNote(idName) {
+        var note = document.createElement("p");
+        note.id = idName;
+        note.className = "text-[10.5px] text-slate-500 text-center leading-relaxed pt-1";
+        note.appendChild(document.createTextNode("By continuing, you agree to our "));
+
+        var items = [
+            { key: "terms", text: "Terms & Conditions" },
+            { key: "privacy", text: "Privacy Policy" },
+            { key: "refund", text: "Refund Policy" }
+        ];
+        items.forEach(function(item, idx) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.className = "kph-policy-inline-link";
+            b.textContent = item.text;
+            b.addEventListener("click", function(e) {
+                e.preventDefault();
+                openPolicyModal(item.key);
+            });
+            note.appendChild(b);
+            if (idx === 0) note.appendChild(document.createTextNode(", "));
+            else if (idx === 1) note.appendChild(document.createTextNode(", and "));
+            else note.appendChild(document.createTextNode("."));
+        });
+        return note;
+    }
+
+    function injectPolicyLinksIntoPage() {
+        ensurePolicyModalExists();
+
+        var root = document.getElementById("kph-app-root");
+        var footer = root ? root.querySelector("footer") : null;
+        if (footer) {
+            if (!document.getElementById("kph-footer-policies-bar")) {
+                var bottomBar = footer.querySelector(".pt-6");
+                if (bottomBar) {
+                    if (bottomBar.parentElement) {
+                        var policyStrip = document.createElement("div");
+                        policyStrip.id = "kph-footer-policies-bar";
+                        policyStrip.className = "py-5 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3";
+
+                        var label = document.createElement("span");
+                        label.className = "text-[11px] font-extrabold uppercase tracking-wider text-white flex items-center gap-2";
+                        var shieldIcon = document.createElement("i");
+                        shieldIcon.className = "fa-solid fa-shield-halved text-[#1dbf73]";
+                        label.appendChild(shieldIcon);
+                        label.appendChild(document.createTextNode("Legal & Policies"));
+                        policyStrip.appendChild(label);
+
+                        var linksWrap = document.createElement("div");
+                        linksWrap.className = "flex flex-wrap items-center gap-x-5 gap-y-2";
+                        POLICY_KEYS.forEach(function(key) {
+                            var btn = document.createElement("button");
+                            btn.type = "button";
+                            btn.className = "footer-simple-link";
+                            btn.textContent = POLICIES_DATA[key].label;
+                            btn.addEventListener("click", function(e) {
+                                e.preventDefault();
+                                openPolicyModal(key);
+                            });
+                            linksWrap.appendChild(btn);
+                        });
+                        policyStrip.appendChild(linksWrap);
+
+                        bottomBar.parentElement.insertBefore(policyStrip, bottomBar);
+                    }
+                }
+            }
+        }
+
+        var orderForm = document.getElementById("studioOrderForm");
+        if (orderForm) {
+            if (!document.getElementById("kph-checkout-policy-note")) {
+                orderForm.appendChild(createConsentNote("kph-checkout-policy-note"));
+            }
+        }
+
+        var signupForm = document.getElementById("signupForm");
+        if (signupForm) {
+            if (!document.getElementById("kph-signup-policy-note")) {
+                signupForm.appendChild(createConsentNote("kph-signup-policy-note"));
+            }
+        }
+
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") closePolicyModal();
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", injectPolicyLinksIntoPage);
+    } else {
+        injectPolicyLinksIntoPage();
+    }
+})();
+</script>
+<!-- ========== /ZONIX POLICIES POPUP ========== -->
